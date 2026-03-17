@@ -11,7 +11,7 @@ const Navigation = () => {
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/car">Cart</Link>
+          <Link to="/cart">Cart</Link>
         </li>
       </ul>
     </nav>
