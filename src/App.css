@@ -41,3 +41,39 @@ footer {
   background-color: #22333b;
   color: white;
 }
+
+.products {
+  display: grid;
+  padding: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  border: 2px solid rgb(121, 120, 120);
+  display: grid;
+  grid-template-rows: 200px 1fr;
+  border-radius: 30px;
+  padding: 16px;
+}
+
+.product-card img {
+  justify-self: center;
+  align-self: center;
+  height: auto;
+  width: 100px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 1rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+}
