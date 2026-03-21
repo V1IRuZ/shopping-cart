@@ -71,7 +71,11 @@ footer {
 }
 
 .product-title {
+  width: 180px;
   font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-price {
