@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard.jsx";
+import { useOutletContext } from "react-router";
+import LoadingPage from "./LoadingPage.jsx";
+import ErrorPage from "./ErrorPage.jsx";
 
 const Shop = () => {
-  const [data, setData] = useState([]);
+  const { data, loading, error } = useOutletContext();
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
+  if (loading) {
+    return <LoadingPage />;
+  }
+
+  if (error) {
+    return <ErrorPage />;
+  }
 
   return (
     <>
