@@ -1,10 +1,11 @@
 import "./App.css";
 import PageLayout from "./components/PageLayout.jsx";
+import { Outlet } from "react-router";
 
 function App() {
   return (
     <PageLayout>
-      <h1>Hello World!</h1>
+      <Outlet />
     </PageLayout>
   );
 }
