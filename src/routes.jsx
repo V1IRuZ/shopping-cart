@@ -6,15 +6,17 @@ const routes = [
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/shop",
-    element: <Shop />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
+    children: [
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
   },
 ];
 
-export default routes
+export default routes;
