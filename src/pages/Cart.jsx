@@ -1,11 +1,9 @@
-import PageLayout from "../components/PageLayout.jsx"
-
 const Cart = () => {
   return (
-    <PageLayout>
-        <h1>Cart</h1>
-    </PageLayout>
-  )
+    <>
+      <h1>Cart</h1>
+    </>
+  );
 };
 
 export default Cart;
