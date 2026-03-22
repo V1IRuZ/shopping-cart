@@ -1,4 +1,6 @@
 #root {
+  --dark-blue: #22333b;
+  --white: #f8f8f8;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 100px 1fr 75px;
@@ -17,7 +19,7 @@ main,
 }
 
 header {
-  background-color: #22333b;
+  background-color: var(--dark-blue);
 }
 
 header ul {
@@ -29,17 +31,17 @@ header ul {
 header a {
   font-size: 3rem;
   font-weight: 500;
-  color: white;
+  color: var(--white);
 }
 
 header a:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--white);
 }
 
 footer {
   text-align: center;
-  background-color: #22333b;
-  color: white;
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 .products {
@@ -80,4 +82,12 @@ footer {
 
 .product-price {
   font-size: 1.5rem;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 30px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  cursor: pointer;
 }
