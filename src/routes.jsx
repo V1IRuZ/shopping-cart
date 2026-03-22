@@ -2,6 +2,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
 import Cart from "./pages/Cart.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const routes = [
   {
@@ -15,6 +16,10 @@ const routes = [
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/shop/product/:id",
+        element: <ProductPage />,
       },
       {
         path: "/cart",
