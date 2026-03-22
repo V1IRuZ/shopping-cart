@@ -1,6 +1,11 @@
 import { Link } from "react-router";
+import Button from "./ui/Button.jsx";
 
 const ProductCard = ({ product }) => {
+  const handleClick = () => {
+    console.log("Works!");
+  };
+
   return (
     <div className="product-card">
       <img src={product.image} alt="" />
@@ -10,6 +15,7 @@ const ProductCard = ({ product }) => {
           <h1 className="product-price">{product.price} $</h1>
         </Link>
       </div>
+      <Button label="ADD TO CART" className="add-btn" onClick={handleClick} />
     </div>
   );
 };
