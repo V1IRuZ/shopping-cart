@@ -29,6 +29,7 @@ const Shop = () => {
       {
         title: product.title,
         id: product.id,
+        image: product.image,
         price: product.price,
         quantity: 1,
       },
