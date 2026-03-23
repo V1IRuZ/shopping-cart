@@ -15,7 +15,7 @@ const Navigation = ({ cart }) => {
         </li>
         <li className="cart-link">
           <Link to="/cart">
-            {totalItems > 0 && <span>{totalItems}</span>}
+            {totalItems >= 0 && <span>{totalItems}</span>}
             <ShoppingCart size={48} />
           </Link>
         </li>
