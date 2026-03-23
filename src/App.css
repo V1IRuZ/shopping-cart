@@ -109,3 +109,41 @@ button {
   background-color: crimson;
   border-radius: 50%;
 }
+
+.cart-item {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  flex-direction: column;
+  border-bottom: 2px solid lightslategray;
+}
+
+.cart-item .title {
+  font-size: 1rem;
+  text-wrap: balance;
+}
+
+.cart-item a {
+  color: black;
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  grid-template-columns: 50px 1fr;
+}
+
+.item-total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.cart-item img {
+  height: 50px;
+  width: auto;
+}
+
+.product-options {
+  display: grid;
+  grid-template-columns: 200px 50px;
+  gap: 10px;
+}
