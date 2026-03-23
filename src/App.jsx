@@ -9,7 +9,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   return (
-    <PageLayout>
+    <PageLayout cart={cart}>
       <Outlet context={{ data, loading, error, cart, setCart }} />
     </PageLayout>
   );

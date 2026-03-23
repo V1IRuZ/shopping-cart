@@ -1,10 +1,10 @@
 import Navigation from "./Navigation.jsx";
 
-const Header = () => {
+const Header = ({cart}) => {
   return (
     <header>
       <div className="header-content">
-        <Navigation />
+        <Navigation cart={cart}/>
       </div>
     </header>
   );
