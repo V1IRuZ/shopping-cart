@@ -1,7 +1,8 @@
+import ProductCounter from "./ProductCounter.jsx";
 import { Link } from "react-router";
-import { Trash } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
-const CartItem = ({ product, onRemove }) => {
+const CartItem = ({ product, onRemove, handleChange }) => {
   const totalPrice = product.quantity * product.price;
 
   return (
@@ -12,9 +13,14 @@ const CartItem = ({ product, onRemove }) => {
       </Link>
       <div className="item-total">
         <div className="product-options">
-          <h2 className="quantity">Quantity: {product.quantity}</h2>
+          <ProductCounter
+            product={product}
+            key={product.id}
+            onChange={(e) => handleChange(e, product.id)}
+            handleRemove={onRemove}
+          />
           <button onClick={onRemove}>
-            <Trash size={24} />
+            <Trash2 size={24} />
           </button>
         </div>
         <h2 className="price">Price: {totalPrice} $</h2>
