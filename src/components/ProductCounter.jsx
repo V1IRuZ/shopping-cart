@@ -9,7 +9,8 @@ const ProductCounter = ({ product, onChange, handleRemove }) => {
           onChange={onChange}
           value={product.quantity}
           onBlur={(e) => {
-            if (e.target.value <= 0) {
+            const val = Number(e.target.value)
+            if (val <= 0) {
               handleRemove(product.id);
             }
           }}
