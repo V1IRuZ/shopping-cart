@@ -2,8 +2,14 @@ import ProductCounter from "./ProductCounter.jsx";
 import { Link } from "react-router";
 import { Trash2 } from "lucide-react";
 
-const CartItem = ({ product, onRemove, handleChange }) => {
+const CartItem = ({ product, cart, setCart }) => {
   const totalPrice = product.quantity * product.price;
+
+  const handleRemove = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+
+    setCart(updatedCart);
+  };
 
   return (
     <li className="cart-item">
@@ -16,10 +22,10 @@ const CartItem = ({ product, onRemove, handleChange }) => {
           <ProductCounter
             product={product}
             key={product.id}
-            onChange={(e) => handleChange(e, product.id)}
-            handleRemove={onRemove}
+            setCart={setCart}
+            handleRemove={handleRemove}
           />
-          <button onClick={onRemove}>
+          <button onClick={() => handleRemove(product.id)}>
             <Trash2 size={24} />
           </button>
         </div>
