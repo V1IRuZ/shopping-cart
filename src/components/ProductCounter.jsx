@@ -25,6 +25,18 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
     }
   };
 
+  const handleIncrement = (id) => {
+    setCart((prev) =>
+      prev.map((item) => {
+        if (item.id === id && item.quantity < 99) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+
+        return item;
+      }),
+    );
+  };
+
   return (
     <div className="product-counter">
       <button>-</button>
@@ -36,7 +48,7 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
           onBlur={(e) => handleBlur(e)}
         />
       </label>
-      <button>+</button>
+      <button onClick={() => handleIncrement(product.id)}>+</button>
     </div>
   );
 };
