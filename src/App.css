@@ -84,12 +84,11 @@ footer {
   font-size: 1.5rem;
 }
 
-button {
+.add-btn {
   padding: 6px 12px;
   border-radius: 30px;
   background-color: var(--dark-blue);
   color: var(--white);
-  cursor: pointer;
 }
 
 .cart-link {
@@ -146,4 +145,18 @@ button {
   display: grid;
   grid-template-columns: 200px 50px;
   gap: 10px;
+}
+
+.product-counter {
+  display: flex;
+  align-items: center;
+}
+
+.product-counter input {
+  max-width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
 }
