@@ -1,6 +1,5 @@
 const ProductCounter = ({ product, setCart, handleRemove }) => {
-
-    const handleChange = (e, id) => {
+  const handleChange = (e, id) => {
     const inputValue = Number(e.target.value);
     const regex = /^\d{0,2}$/;
 
@@ -15,6 +14,13 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
     );
   };
 
+  const handleBlur = (e) => {
+    const val = Number(e.target.value);
+    if (val <= 0) {
+      handleRemove(product.id);
+    }
+  };
+
   return (
     <div className="product-counter">
       <button>-</button>
@@ -24,12 +30,7 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
           maxLength={2}
           onChange={(e) => handleChange(e, product.id)}
           value={product.quantity}
-          onBlur={(e) => {
-            const val = Number(e.target.value)
-            if (val <= 0) {
-              handleRemove(product.id);
-            }
-          }}
+          onBlur={(e) => handleBlur(e)}
         />
       </label>
       <button>+</button>
