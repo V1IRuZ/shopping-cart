@@ -37,9 +37,22 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
     );
   };
 
+  const handleDecrement = (id) => {
+    setCart((prev) =>
+      prev.map((item) => {
+        if (item.id === id && item.quantity > 1) {
+          
+          return { ...item, quantity: item.quantity - 1 };
+        }
+
+        return item;
+      }),
+    );
+  };
+
   return (
     <div className="product-counter">
-      <button>-</button>
+      <button onClick={() => handleDecrement(product.id)}>-</button>
       <label htmlFor="">
         <input
           type="text"
