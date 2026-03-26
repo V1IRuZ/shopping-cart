@@ -1,9 +1,11 @@
 import ProductCounter from "./ProductCounter.jsx";
+import { formatDecimals } from "../utils/helpers.js";
 import { Link } from "react-router";
 import { Trash2 } from "lucide-react";
 
 const CartItem = ({ product, cart, setCart }) => {
   const totalPrice = product.quantity * product.price;
+  const fixedTotalPrice = formatDecimals(totalPrice);
 
   const handleRemove = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
@@ -29,7 +31,7 @@ const CartItem = ({ product, cart, setCart }) => {
             <Trash2 size={24} />
           </button>
         </div>
-        <h2 className="price">Price: {totalPrice} $</h2>
+        <h2 className="price">Price: {fixedTotalPrice} $</h2>
       </div>
     </li>
   );
