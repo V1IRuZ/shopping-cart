@@ -130,7 +130,8 @@ footer {
   grid-template-columns: 50px 1fr;
 }
 
-.item-total {
+.item-total,
+.checkout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
@@ -160,4 +161,17 @@ footer {
   border: 1px solid black;
   font-size: 1.5rem;
   max-width: 50px;
+}
+
+.checkout {
+  padding: 24px;
+  align-items: center;
+}
+
+.checkout-btn {
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
