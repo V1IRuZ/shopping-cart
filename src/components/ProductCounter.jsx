@@ -1,3 +1,5 @@
+import { Plus, Minus } from "lucide-react";
+
 const ProductCounter = ({ product, setCart, handleRemove }) => {
   const handleChange = (e, id) => {
     const inputValue = e.target.value;
@@ -41,7 +43,6 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
     setCart((prev) =>
       prev.map((item) => {
         if (item.id === id && item.quantity > 1) {
-          
           return { ...item, quantity: item.quantity - 1 };
         }
 
@@ -52,7 +53,12 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
 
   return (
     <div className="product-counter">
-      <button onClick={() => handleDecrement(product.id)}>-</button>
+      <button
+        aria-label="decrement"
+        onClick={() => handleDecrement(product.id)}
+      >
+        <Minus size={24} />
+      </button>
       <label htmlFor="">
         <input
           type="text"
@@ -61,7 +67,12 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
           onBlur={(e) => handleBlur(e)}
         />
       </label>
-      <button onClick={() => handleIncrement(product.id)}>+</button>
+      <button
+        aria-label="increment"
+        onClick={() => handleIncrement(product.id)}
+      >
+        <Plus size={24} />
+      </button>
     </div>
   );
 };
