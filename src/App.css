@@ -143,20 +143,21 @@ footer {
 
 .product-options {
   display: grid;
-  grid-template-columns: 200px 50px;
+  grid-template-columns: 140px 50px;
   gap: 10px;
 }
 
 .product-counter {
+  border-radius: 30px;
+  border: 2px solid black;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .product-counter input {
+  text-align: center;
+  border: 1px solid black;
+  font-size: 1.5rem;
   max-width: 50px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  display: none;
 }
