@@ -4,10 +4,14 @@ import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ProductCounter from "../ProductCounter.jsx";
 
-const mockProduct = { title: "shirt", id: 1, quantity: 3, price: 10.4 };
+const mockProducts = [
+  { title: "shirt", id: 1, quantity: 3, price: 10.4 },
+  { title: "jeans", id: 2, quantity: 2, price: 15.5 },
+  { title: "shoes", id: 3, quantity: 98, price: 12.1 },
+];
 
-const Wrapper = () => {
-  const [cart, setCart] = useState([mockProduct]);
+const Wrapper = ({ productIndex }) => {
+  const [cart, setCart] = useState(mockProducts);
 
   const mockRemove = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
@@ -18,9 +22,9 @@ const Wrapper = () => {
   return (
     <>
       <ProductCounter
-        product={cart[0]}
+        product={cart[productIndex]}
         setCart={setCart}
-        handleRemove={() => mockRemove(cart[0].id)}
+        handleRemove={() => mockRemove(cart[productIndex].id)}
       />
     </>
   );
@@ -28,7 +32,7 @@ const Wrapper = () => {
 
 describe("ProductCounter component", () => {
   it("renders the current product quantity", () => {
-    render(<ProductCounter product={mockProduct} />);
+    render(<ProductCounter product={mockProducts[0]} />);
 
     const input = screen.getByRole("textbox");
 
@@ -39,7 +43,7 @@ describe("ProductCounter component", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<ProductCounter product={mockProduct} setCart={onClick} />);
+    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "increment" });
     await user.click(button);
@@ -51,7 +55,7 @@ describe("ProductCounter component", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<ProductCounter product={mockProduct} setCart={onClick} />);
+    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "decrement" });
     await user.click(button);
@@ -62,7 +66,7 @@ describe("ProductCounter component", () => {
   it("allows the user to type a value into the input", async () => {
     const user = userEvent.setup();
 
-    render(<Wrapper />);
+    render(<Wrapper productIndex={0} />);
 
     const input = screen.getByRole("textbox");
 
@@ -74,7 +78,7 @@ describe("ProductCounter component", () => {
   it("increment button increments input value", async () => {
     const user = userEvent.setup();
 
-    render(<Wrapper />);
+    render(<Wrapper productIndex={0} />);
 
     const button = screen.getByRole("button", { name: "increment" });
     const input = screen.getByRole("textbox");
@@ -87,7 +91,7 @@ describe("ProductCounter component", () => {
   it("Decrement button decrements input value", async () => {
     const user = userEvent.setup();
 
-    render(<Wrapper />);
+    render(<Wrapper productIndex={0} />);
 
     const button = screen.getByRole("button", { name: "decrement" });
     const input = screen.getByRole("textbox");
@@ -95,5 +99,48 @@ describe("ProductCounter component", () => {
     await user.click(button);
 
     expect(input).toHaveValue("2");
+  });
+
+  it("the increment button only increments up to 99", async () => {
+    const user = userEvent.setup();
+
+    render(<Wrapper productIndex={2} />);
+
+    const button = screen.getByRole("button", { name: "increment" });
+    const input = screen.getByRole("textbox");
+
+    await user.click(button);
+    await user.click(button);
+    await user.click(button);
+
+    expect(input).toHaveValue("99");
+  });
+
+  it("decrement button only decreases to 1", async () => {
+    const user = userEvent.setup();
+
+    render(<Wrapper productIndex={1} />);
+
+    const button = screen.getByRole("button", { name: "decrement" });
+    const input = screen.getByRole("textbox");
+
+    await user.click(button);
+    await user.click(button);
+    await user.click(button);
+
+    expect(input).toHaveValue("1");
+  });
+
+  it("does not allow type too large values ​​into the input", async () => {
+    const user = userEvent.setup();
+
+    render(<Wrapper productIndex={0} />);
+
+    const input = screen.getByRole("textbox");
+
+    await user.clear(input);
+    await user.type(input, "999");
+
+    expect(input).toHaveValue("99");
   });
 });
