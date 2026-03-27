@@ -143,4 +143,16 @@ describe("ProductCounter component", () => {
 
     expect(input).toHaveValue("99");
   });
+
+    it("does not allow type other than numbers", async () => {
+    const user = userEvent.setup();
+
+    render(<Wrapper productIndex={0} />);
+
+    const input = screen.getByRole("textbox");
+
+    await user.type(input, "hello!?");
+
+    expect(input).toHaveValue("3");
+  });
 });
