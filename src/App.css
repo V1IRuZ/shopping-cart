@@ -47,7 +47,7 @@ footer {
 .products {
   display: grid;
   padding: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
 }
 
@@ -57,6 +57,19 @@ footer {
   grid-template-rows: 200px 1fr;
   border-radius: 30px;
   padding: 16px;
+}
+
+.product-card a {
+  color: black;
+}
+
+.star-rating .rating {
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.star-rating .count {
+  margin-left: 4px;
 }
 
 .product-card img {
@@ -73,7 +86,7 @@ footer {
 }
 
 .product-title {
-  width: 180px;
+  width: 220px;
   font-size: 1rem;
   white-space: nowrap;
   overflow: hidden;
