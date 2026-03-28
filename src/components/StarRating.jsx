@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating, count }) => {
   const integer = Math.floor(rating);
   const array = [0, 1, 2, 3, 4];
 
@@ -15,6 +15,8 @@ const StarRating = ({ rating }) => {
           <Star fill="white" />
         ),
       )}
+      <span className="rating">{rating}</span>
+      <span className="count">({count})</span>
     </div>
   );
 };
