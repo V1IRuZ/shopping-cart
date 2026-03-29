@@ -8,7 +8,7 @@ const ProductCard = ({ product, onAddtoCart }) => {
     <div className="product-card">
       <img src={product.image} alt="" />
       <div className="product-info">
-        <Link to={`/shop/product/${product.id}`}>
+        <Link to={`/shop/${product.category}/${product.id}`}>
           <h1 className="product-title">{product.title}</h1>
           <StarRating rating={product.rating.rate} count={product.rating.count} />
           <h1 className="product-price">{product.price} $</h1>
