@@ -34,10 +34,6 @@ header a {
   color: var(--white);
 }
 
-header a:hover {
-  border-bottom: 2px solid var(--white);
-}
-
 footer {
   text-align: center;
   background-color: var(--dark-blue);
@@ -240,4 +236,21 @@ footer {
   font-size: 1.5rem;
   padding: 4px 8px;
   border-radius: 10px;
+}
+
+.path-nav {
+  margin-left: 200px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.path-nav a {
+  color: black;
+  font-size: 1.5rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
