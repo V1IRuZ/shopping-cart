@@ -219,6 +219,9 @@ footer {
   font-size: 1.5rem;
 }
 
-.description button {
-  
+.category {
+  padding: 16px;
+  display: flex; 
+  flex-direction: column;
+  gap: 16px;
 }
