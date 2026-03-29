@@ -1,4 +1,5 @@
 import ProductCard from "../components/ProductCard.jsx";
+import CategoryNavigation from "../components/CategoryNavigation.jsx";
 import { useOutletContext } from "react-router";
 import LoadingPage from "./LoadingPage.jsx";
 import ErrorPage from "./ErrorPage.jsx";
@@ -47,7 +48,7 @@ const Shop = () => {
 
   return (
     <>
-      <h1>Shop</h1>
+      <CategoryNavigation />
       <div className="products">
         {data.map((product) => (
           <ProductCard
