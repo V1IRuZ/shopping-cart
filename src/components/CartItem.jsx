@@ -15,7 +15,7 @@ const CartItem = ({ product, cart, setCart }) => {
 
   return (
     <li className="cart-item">
-      <Link to={`/shop/product/${product.id}`}>
+      <Link to={`/shop/${product.category}/${product.id}`}>
         <img src={product.image} alt="" />
         <h1 className="title">{product.title}</h1>
       </Link>
