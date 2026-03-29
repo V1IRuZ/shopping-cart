@@ -214,14 +214,30 @@ footer {
   grid-column: 1/2;
 }
 
-
 .description p {
   font-size: 1.5rem;
 }
 
 .category {
   padding: 16px;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.category-nav {
+  padding: 20px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.category-list a {
+  color: black;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  border-radius: 10px;
 }
