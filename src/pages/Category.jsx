@@ -1,5 +1,5 @@
 import CategoryCard from "../components/CategoryCard.jsx";
-import CategoryNavigation from "../components/CategoryNavigation.jsx";
+import ShopPath from "../components/ShopPath.jsx";
 import { useParams, useOutletContext } from "react-router";
 
 const Category = () => {
@@ -12,7 +12,7 @@ const Category = () => {
 
   return (
     <>
-      <CategoryNavigation />
+      <ShopPath />
       <ul className="category">
         {selectedCategory.map((item) => (
           <CategoryCard key={item.id} product={item} />
