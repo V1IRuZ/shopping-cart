@@ -238,7 +238,8 @@ footer {
   border-radius: 10px;
 }
 
-.path-nav {
+.path-nav,
+.shop-path {
   margin-left: 200px;
   padding: 24px;
   display: flex;
@@ -246,7 +247,8 @@ footer {
   gap: 8px;
 }
 
-.path-nav a {
+.path-nav a,
+.shop-path a {
   color: black;
   font-size: 1.5rem;
 }
