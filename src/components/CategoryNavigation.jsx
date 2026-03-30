@@ -5,9 +5,6 @@ const CategoryNavigation = () => {
     <nav className="category-nav">
       <ul className="category-list">
         <li>
-          <Link to="/shop">All</Link>
-        </li>
-        <li>
           <Link to="/shop/men's%20clothing">Men's Clothing</Link>
         </li>
         <li>
