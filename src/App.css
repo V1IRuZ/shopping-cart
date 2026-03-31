@@ -256,3 +256,11 @@ footer {
 nav a:hover {
   text-decoration: underline;
 }
+
+.error { 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
