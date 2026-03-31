@@ -1,11 +1,9 @@
 import ProductCard from "../components/ProductCard.jsx";
 import CategoryNavigation from "../components/CategoryNavigation.jsx";
 import { useOutletContext } from "react-router";
-import LoadingPage from "./LoadingPage.jsx";
-import ErrorPage from "./ErrorPage.jsx";
 
 const Shop = () => {
-  const { data, loading, error, cart, setCart } = useOutletContext();
+  const { data, cart, setCart } = useOutletContext();
 
   const handleAddtoCart = (product, productId) => {
     const cartHasProduct = cart.some((item) => item.id === productId);
@@ -37,14 +35,6 @@ const Shop = () => {
       },
     ]);
   };
-
-  if (loading) {
-    return <LoadingPage />;
-  }
-
-  if (error) {
-    return <ErrorPage />;
-  }
 
   return (
     <>
