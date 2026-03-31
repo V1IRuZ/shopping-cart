@@ -8,7 +8,10 @@ const useProductData = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("https://fakestoreapi.com/products", { signal: controller.signal })
+    fetch("https://fakestoreapi.com/products", {
+      mode: "cors",
+      signal: controller.signal,
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("server error");
