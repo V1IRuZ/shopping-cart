@@ -1,6 +1,7 @@
 import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
 import PathNavigation from "./PathNavigation.jsx";
+import CommentSection from "./CommentSection.jsx";
 
 const Product = ({ product }) => {
   return (
@@ -24,6 +25,7 @@ const Product = ({ product }) => {
           <img src={product.thumbnail} alt="" />
         </div>
       </div>
+      <CommentSection reviews={product.reviews} />
     </>
   );
 };
