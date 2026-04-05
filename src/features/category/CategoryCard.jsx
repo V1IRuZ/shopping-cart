@@ -15,7 +15,7 @@ const CategoryCard = ({ product }) => {
         </div>
         <div className={styles.info}>
           <h1 className={styles.title}>{product.title}</h1>
-          <StarRating rating={product.rating} />
+          <StarRating key={product.id} rating={product.rating} />
           <p className={styles.description}>{product.description}</p>
         </div>
       </Link>

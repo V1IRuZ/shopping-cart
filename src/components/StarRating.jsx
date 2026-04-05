@@ -8,11 +8,11 @@ const StarRating = ({ rating }) => {
     <div className="star-rating" style={{display: "flex"}}>
       {array.map((value) =>
         value < rating && value < integer ? (
-          <Star fill="gold" />
+          <Star key={value} fill="gold" />
         ) : value < rating && value === integer ? (
-          <Star fill="#fdec8a" />
+          <Star key={value} fill="#fdec8a" />
         ) : (
-          <Star fill="white" />
+          <Star key={value} fill="white" />
         ),
       )}
       <span className="rating">{rating}</span>
