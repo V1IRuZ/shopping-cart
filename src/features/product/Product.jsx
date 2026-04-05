@@ -2,6 +2,7 @@ import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
 import PathNavigation from "./PathNavigation.jsx";
 import CommentSection from "./CommentSection.jsx";
+import AvailabilityStatus from "./AvailabilityStatus.jsx";
 
 const Product = ({ product }) => {
   return (
@@ -19,6 +20,7 @@ const Product = ({ product }) => {
           </div>
           <div className="add">
             <Button className="add-btn" label="ADD TO CART" />
+            <AvailabilityStatus availability={product.availabilityStatus} />
           </div>
         </div>
         <div className="image">
