@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import PageLayout from "./components/PageLayout.jsx";
+import PageLayout from "./layout/PageLayout.jsx";
 import { Outlet } from "react-router";
 import { useProductData } from "./hooks/useProductsData.js";
-import LoadingPage from "./pages/LoadingPage.jsx";
-import ErrorPage from "./pages/ErrorPage.jsx";
+import LoadingPage from "./components/LoadingPage.jsx";
+import ErrorPage from "./components/ErrorPage.jsx";
 
 function App() {
   const { data, loading, error } = useProductData();

@@ -1,5 +1,5 @@
-import { formatDecimals } from "../utils/helpers";
-import Button from "./ui/Button";
+import { formatDecimals } from "../../utils/helpers.js";
+import Button from "../../components/ui/Button.jsx";
 
 const Checkout = ({ cart }) => {
   const totalPrice = cart.reduce(

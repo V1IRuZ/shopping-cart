@@ -1,6 +1,6 @@
-import Button from "../components/ui/Button.jsx";
-import StarRating from "../components/StarRating.jsx";
-import PathNavigation from "../components/PathNavigation.jsx";
+import Button from "../../components/ui/Button.jsx";
+import StarRating from "../../components/StarRating.jsx";
+import PathNavigation from "./PathNavigation.jsx";
 
 const Product = ({ product }) => {
   return (

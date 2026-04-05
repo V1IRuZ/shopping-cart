@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import Button from "./ui/Button.jsx";
-import StarRating from "./StarRating.jsx";
+import Button from "../../components/ui/Button.jsx";
+import StarRating from "../../components/StarRating.jsx";
 
 const ProductCard = ({ product, onAddtoCart }) => {
 

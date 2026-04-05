@@ -1,12 +1,10 @@
-import CategoryCard from "../components/CategoryCard.jsx";
-import ShopPath from "../components/ShopPath.jsx";
+import CategoryCard from "../features/category/CategoryCard.jsx";
+import ShopPath from "../features/category/ShopPath.jsx";
 import { useParams, useOutletContext } from "react-router";
 
 const Category = () => {
   const { data } = useOutletContext();
   const { category } = useParams();
-
-  // const formatPath = decodeURIComponent(category);
 
   const selectedCategory = data.filter((item) => item.category === category);
 

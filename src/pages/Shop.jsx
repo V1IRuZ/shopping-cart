@@ -1,5 +1,5 @@
-import ProductCard from "../components/ProductCard.jsx";
-import CategoryNavigation from "../components/CategoryNavigation.jsx";
+import ProductCard from "../features/shop/ProductCard.jsx";
+import CategoryNavigation from "../features/shop/CategoryNavigation.jsx";
 import { useOutletContext } from "react-router";
 
 const Shop = () => {

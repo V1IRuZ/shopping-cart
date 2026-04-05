@@ -1,5 +1,5 @@
-import ProductCounter from "./ProductCounter.jsx";
-import { formatDecimals } from "../utils/helpers.js";
+import ProductCounter from "../../components/ProductCounter.jsx";
+import { formatDecimals } from "../../utils/helpers.js";
 import { Link } from "react-router";
 import { Trash2 } from "lucide-react";
 

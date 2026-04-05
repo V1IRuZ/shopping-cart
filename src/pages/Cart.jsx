@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router";
-import CartList from "../components/CartList.jsx";
-import Checkout from "../components/Checkout.jsx";
+import CartList from "../features/cart/CartList.jsx";
+import Checkout from "../features/cart/Checkout.jsx"
 
 const Cart = () => {
   const { cart, setCart } = useOutletContext();

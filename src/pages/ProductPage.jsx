@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product from "../features/product/Product.jsx";
 import { useOutletContext, useParams } from "react-router";
 
 const ProductPage = () => {

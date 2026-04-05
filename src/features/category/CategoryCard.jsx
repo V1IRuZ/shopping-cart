@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import StarRating from "./StarRating.jsx";
-import styles from "../styles/CategoryCard.module.css";
-import Button from "./ui/Button.jsx";
+import StarRating from "../../components/StarRating.jsx";
+import styles from "../../styles/CategoryCard.module.css";
+import Button from "../../components/ui/Button.jsx";
 
 const CategoryCard = ({ product }) => {
   return (
