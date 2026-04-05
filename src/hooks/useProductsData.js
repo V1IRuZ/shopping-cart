@@ -8,7 +8,7 @@ const useProductData = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("https://fakestoreapi.com/products", {
+    fetch("https://dummyjson.com/products", {
       mode: "cors",
       signal: controller.signal,
     })
@@ -18,7 +18,7 @@ const useProductData = () => {
         }
         return response.json();
       })
-      .then((json) => setData(json))
+      .then((json) => setData(json.products))
       .catch((error) => {
         if (error.name !== "AbortError") {
           setError(error);
