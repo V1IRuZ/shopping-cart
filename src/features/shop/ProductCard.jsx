@@ -3,14 +3,13 @@ import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
 
 const ProductCard = ({ product, onAddtoCart }) => {
-
   return (
     <div className="product-card">
-      <img src={product.images[0]} alt="" />
+      <img src={product.thumbnail} alt="" />
       <div className="product-info">
         <Link to={`/shop/${product.category}/${product.id}`}>
           <h1 className="product-title">{product.title}</h1>
-          <StarRating rating={5} count={100} />
+          <StarRating key={product.id} rating={product.rating} />
           <h1 className="product-price">{product.price} $</h1>
         </Link>
       </div>

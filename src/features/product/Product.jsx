@@ -10,10 +10,7 @@ const Product = ({ product }) => {
         <div className="details">
           <div className="title">
             <h1>{product.title}</h1>
-            <StarRating
-              rating={5}
-              count={100}
-            />
+            <StarRating key={product.id} rating={product.rating} />
           </div>
           <div className="description">
             <h2>Product details</h2>
@@ -24,7 +21,7 @@ const Product = ({ product }) => {
           </div>
         </div>
         <div className="image">
-          <img src={product.images[0]} alt="" />
+          <img src={product.thumbnail} alt="" />
         </div>
       </div>
     </>
