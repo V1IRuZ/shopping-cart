@@ -11,8 +11,8 @@ const Product = ({ product }) => {
           <div className="title">
             <h1>{product.title}</h1>
             <StarRating
-              rating={product.rating.rate}
-              count={product.rating.count}
+              rating={5}
+              count={100}
             />
           </div>
           <div className="description">
@@ -24,7 +24,7 @@ const Product = ({ product }) => {
           </div>
         </div>
         <div className="image">
-          <img src={product.image} alt="" />
+          <img src={product.images[0]} alt="" />
         </div>
       </div>
     </>

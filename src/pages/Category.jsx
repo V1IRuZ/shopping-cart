@@ -6,9 +6,9 @@ const Category = () => {
   const { data } = useOutletContext();
   const { category } = useParams();
 
-  const formatPath = decodeURIComponent(category);
+  // const formatPath = decodeURIComponent(category);
 
-  const selectedCategory = data.filter((item) => item.category === formatPath);
+  const selectedCategory = data.filter((item) => item.category === category);
 
   return (
     <>

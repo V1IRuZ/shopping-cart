@@ -6,11 +6,11 @@ const ProductCard = ({ product, onAddtoCart }) => {
 
   return (
     <div className="product-card">
-      <img src={product.image} alt="" />
+      <img src={product.images[0]} alt="" />
       <div className="product-info">
         <Link to={`/shop/${product.category}/${product.id}`}>
           <h1 className="product-title">{product.title}</h1>
-          <StarRating rating={product.rating.rate} count={product.rating.count} />
+          <StarRating rating={5} count={100} />
           <h1 className="product-price">{product.price} $</h1>
         </Link>
       </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { ChevronRight } from "lucide-react";
 
 const PathNavigation = ({ product }) => {
-  const formattedCategory =
+  const formattedCategoryText =
     product.category[0].toUpperCase() + product.category.slice(1);
 
   return (
@@ -11,7 +11,7 @@ const PathNavigation = ({ product }) => {
       <ChevronRight />
       <Link to="/shop">Shop</Link>
       <ChevronRight />
-      <Link to={`/shop/${product.category}`}>{formattedCategory}</Link>
+      <Link to={`/shop/${product.category}`}>{formattedCategoryText}</Link>
     </nav>
   );
 };

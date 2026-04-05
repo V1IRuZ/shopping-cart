@@ -11,13 +11,13 @@ const CategoryCard = ({ product }) => {
         to={`/shop/${product.category}/${product.id}`}
       >
         <div className={styles["image-wrapper"]}>
-          <img src={product.image} alt="" className={styles.image} />
+          <img src={product.images[0]} alt="" className={styles.image} />
         </div>
         <div className={styles.info}>
           <h1 className={styles.title}>{product.title}</h1>
           <StarRating
-            rating={product.rating.rate}
-            count={product.rating.count}
+            rating={5}
+            count={100}
           />
           <p className={styles.description}>{product.description}</p>
         </div>
