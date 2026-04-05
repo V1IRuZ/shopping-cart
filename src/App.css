@@ -196,6 +196,17 @@ footer {
   gap: 24px;
 }
 
+.product .details .add {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.details .stock {
+  display: flex;
+  gap: 8px;
+}
+
 .product .title {
   margin-bottom: 24px;
 }
