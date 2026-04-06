@@ -1,14 +1,14 @@
-import { useState } from "react";
 import "./App.css";
 import PageLayout from "./layout/PageLayout.jsx";
 import { Outlet } from "react-router";
 import { useProductData } from "./hooks/useProductsData.js";
 import LoadingPage from "./components/LoadingPage.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
+import { useCart } from "./hooks/useCart.js";
 
 function App() {
   const { data, loading, error } = useProductData();
-  const [cart, setCart] = useState([]);
+  const { cart, handleAddToCart, setCart } = useCart();
 
   if (error) {
     return <ErrorPage />;
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <PageLayout cart={cart}>
-      <Outlet context={{ data, loading, error, cart, setCart }} />
+      <Outlet context={{ data, loading, error, cart, handleAddToCart, setCart }} />
     </PageLayout>
   );
 }
