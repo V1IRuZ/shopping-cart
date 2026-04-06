@@ -12,15 +12,15 @@
   gap: 24px;
 }
 
-.product .details .add {
+.main-info {
+  padding-right: min(108px, 5vw);
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
 }
 
-.details .stock {
-  display: flex;
-  gap: 8px;
+.price {
+  font-size: 2rem;
 }
 
 .product .title {
@@ -35,6 +35,17 @@
 
 .description p {
   font-size: 1.5rem;
+}
+
+.product .details .add {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.details .stock {
+  display: flex;
+  gap: 8px;
 }
 
 .comment-section {
