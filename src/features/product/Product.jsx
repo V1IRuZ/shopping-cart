@@ -5,6 +5,7 @@ import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
 
 const Product = ({ product }) => {
+
   return (
     <>
       <PathNavigation product={product} />
@@ -26,6 +27,7 @@ const Product = ({ product }) => {
           <div className="add">
             <Button className="add-btn" label="ADD TO CART" />
             <AvailabilityStatus availability={product.availabilityStatus} />
+            <span>{product.shippingInformation}</span>
           </div>
         </div>
         <div className="image">
