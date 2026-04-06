@@ -1,6 +1,6 @@
 import { Plus, Minus } from "lucide-react";
 
-const ProductCounter = ({ product, setCart, handleRemove }) => {
+const ProductCounter = ({ product, setCart }) => {
   const handleChange = (e, id) => {
     const inputValue = e.target.value;
     const regex = /^\d{0,2}$/;
@@ -23,7 +23,7 @@ const ProductCounter = ({ product, setCart, handleRemove }) => {
   const handleBlur = (e) => {
     const val = Number(e.target.value);
     if (val <= 0) {
-      handleRemove(product.id);
+      setCart((prev) => prev.filter((item) => item.id !== product.id));
     }
   };
 

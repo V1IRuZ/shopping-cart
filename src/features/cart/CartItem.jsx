@@ -3,15 +3,9 @@ import { formatDecimals } from "../../utils/helpers.js";
 import { Link } from "react-router";
 import { Trash2 } from "lucide-react";
 
-const CartItem = ({ product, cart, setCart }) => {
+const CartItem = ({ product, setCart }) => {
   const totalPrice = product.quantity * product.price;
   const fixedTotalPrice = formatDecimals(totalPrice);
-
-  const handleRemove = (id) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-
-    setCart(updatedCart);
-  };
 
   return (
     <li className="cart-item">
@@ -25,9 +19,12 @@ const CartItem = ({ product, cart, setCart }) => {
             product={product}
             key={product.id}
             setCart={setCart}
-            handleRemove={handleRemove}
           />
-          <button onClick={() => handleRemove(product.id)}>
+          <button
+            onClick={() =>
+              setCart((prev) => prev.filter((item) => item.id !== product.id))
+            }
+          >
             <Trash2 size={24} />
           </button>
         </div>

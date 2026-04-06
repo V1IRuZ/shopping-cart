@@ -8,7 +8,11 @@ const CartList = ({ cart, setCart }) => {
   return (
     <ul>
       {cart.map((item) => (
-        <CartItem key={item.id} product={item} cart={cart} setCart={setCart} />
+        <CartItem
+          key={item.id}
+          product={item}
+          setCart={setCart}
+        />
       ))}
     </ul>
   );
