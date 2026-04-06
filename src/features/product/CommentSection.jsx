@@ -1,14 +1,13 @@
 import Comment from "./Comment";
 
 const CommentSection = ({ reviews }) => {
-  const commentKey = crypto.randomUUID();
 
   return (
     <div className="comment-section">
-      <h2>Comments</h2>
+      <h2>COMMENTS</h2>
       <ul className="comments">
-        {reviews.map((review) => (
-          <Comment review={review} key={commentKey} />
+        {reviews.map((review, index) => (
+          <Comment review={review} key={index} />
         ))}
       </ul>
     </div>
