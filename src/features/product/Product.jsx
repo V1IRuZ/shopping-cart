@@ -4,8 +4,7 @@ import PathNavigation from "./PathNavigation.jsx";
 import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
 
-const Product = ({ product }) => {
-
+const Product = ({ product, handleOnAddToCart }) => {
   return (
     <>
       <PathNavigation product={product} />
@@ -25,7 +24,11 @@ const Product = ({ product }) => {
             <p>{product.description}</p>
           </div>
           <div className="add">
-            <Button className="add-btn" label="ADD TO CART" />
+            <Button
+              className="add-btn"
+              label="ADD TO CART"
+              onClick={() => handleOnAddToCart(product)}
+            />
             <AvailabilityStatus availability={product.availabilityStatus} />
             <span>{product.shippingInformation}</span>
           </div>
