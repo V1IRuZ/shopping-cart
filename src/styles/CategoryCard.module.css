@@ -3,8 +3,8 @@
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 300px;
   box-shadow:
-    4px 4px 4px #bbbbbb,
-    -2px -2px 2px #bbbbbb;
+    4px 4px 4px #cacaca,
+    -2px -2px 2px #cacaca;
 }
 
 .link {
