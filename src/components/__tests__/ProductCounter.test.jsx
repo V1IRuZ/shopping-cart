@@ -13,19 +13,11 @@ const mockProducts = [
 const Wrapper = ({ productIndex }) => {
   const [cart, setCart] = useState(mockProducts);
 
-  const mockRemove = (id) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-
-    setCart(updatedCart);
-  };
+  const testedProduct = cart[productIndex];
 
   return (
     <>
-      <ProductCounter
-        product={cart[productIndex]}
-        setCart={setCart}
-        handleRemove={() => mockRemove(cart[productIndex].id)}
-      />
+      <ProductCounter product={testedProduct} setCart={setCart} />
     </>
   );
 };
@@ -58,6 +50,18 @@ describe("ProductCounter component", () => {
     render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "decrement" });
+    await user.click(button);
+
+    expect(onClick).toHaveBeenCalled();
+  });
+
+  it("remove button is called", async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+
+    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
+
+    const button = screen.getByRole("button", { name: "remove" });
     await user.click(button);
 
     expect(onClick).toHaveBeenCalled();
@@ -144,7 +148,7 @@ describe("ProductCounter component", () => {
     expect(input).toHaveValue("99");
   });
 
-    it("does not allow type other than numbers", async () => {
+  it("does not allow type other than numbers", async () => {
     const user = userEvent.setup();
 
     render(<Wrapper productIndex={0} />);
@@ -154,5 +158,18 @@ describe("ProductCounter component", () => {
     await user.type(input, "hello!?");
 
     expect(input).toHaveValue("3");
+  });
+
+  it("removes the button", async () => {
+    const user = userEvent.setup();
+
+    render(<Wrapper productIndex={0} />);
+
+    const button = screen.getByRole("button", { name: "remove" });
+    await user.click(button);
+
+    expect(
+      screen.queryByRole(button, { name: "remove" }),
+    ).not.toBeInTheDocument();
   });
 });
