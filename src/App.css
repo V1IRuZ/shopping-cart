@@ -1,9 +1,11 @@
 #root {
   --dark-blue: #22333b;
+  --background-white: #fafafa;
   --white: #f8f8f8;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 100px 1fr 75px;
+  background-color: var(--background-white);
 }
 
 .header-content,
