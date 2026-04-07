@@ -1,10 +1,13 @@
+import ProductCounter from "../../components/ProductCounter.jsx";
 import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
 import PathNavigation from "./PathNavigation.jsx";
 import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
 
-const Product = ({ product, handleOnAddToCart }) => {
+const Product = ({ product, cart, setCart }) => {
+  const cartProduct = cart.find((item) => item.id === product.id);
+
   return (
     <>
       <PathNavigation product={product} />
@@ -24,11 +27,27 @@ const Product = ({ product, handleOnAddToCart }) => {
             <p>{product.description}</p>
           </div>
           <div className="add">
-            <Button
-              className="add-btn"
-              label="ADD TO CART"
-              onClick={() => handleOnAddToCart(product)}
-            />
+            {cartProduct ? (
+              <ProductCounter product={cartProduct} setCart={setCart} />
+            ) : (
+              <Button
+                className="add-btn"
+                label="ADD TO CART"
+                onClick={() =>
+                  setCart((prev) => [
+                    ...prev,
+                    {
+                      title: product.title,
+                      id: product.id,
+                      category: product.category,
+                      image: product.thumbnail,
+                      price: product.price,
+                      quantity: 1,
+                    },
+                  ])
+                }
+              />
+            )}
             <AvailabilityStatus availability={product.availabilityStatus} />
             <span>{product.shippingInformation}</span>
           </div>

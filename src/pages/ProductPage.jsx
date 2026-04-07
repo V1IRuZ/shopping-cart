@@ -3,14 +3,12 @@ import { useOutletContext, useParams } from "react-router";
 import "../styles/ProductPage.css";
 
 const ProductPage = () => {
-  const { data, handleAddToCart } = useOutletContext();
+  const { data, cart, setCart } = useOutletContext();
   let { id } = useParams();
 
   const currentProduct = data.find((item) => item.id === Number(id));
 
-  return (
-    <Product product={currentProduct} handleOnAddToCart={handleAddToCart} />
-  );
+  return <Product product={currentProduct} cart={cart} setCart={setCart} />;
 };
 
 export default ProductPage;
