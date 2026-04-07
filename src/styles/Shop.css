@@ -6,7 +6,9 @@
 }
 
 .product-card {
-  border: 2px solid rgb(121, 120, 120);
+  box-shadow:
+    2px 2px 5px var(--shadow-grey),
+    -2px -2px 5px var(--shadow-grey);
   display: grid;
   grid-template-rows: 200px 1fr;
   border-radius: 30px;
