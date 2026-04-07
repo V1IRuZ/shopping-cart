@@ -42,60 +42,9 @@ footer {
   color: var(--white);
 }
 
-.products {
-  display: grid;
-  padding: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
-
-.product-card {
-  border: 2px solid rgb(121, 120, 120);
-  display: grid;
-  grid-template-rows: 200px 1fr;
-  border-radius: 30px;
-  padding: 16px;
-}
-
-.product-card a {
-  color: black;
-}
-
 .star-rating .rating {
   margin-left: 8px;
   font-weight: 500;
-}
-
-.product-card img {
-  justify-self: center;
-  align-self: center;
-  height: auto;
-  width: 100px;
-}
-
-.product-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.product-title {
-  width: 220px;
-  font-size: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.product-price {
-  font-size: 1.5rem;
-}
-
-.add-btn {
-  padding: 6px 12px;
-  border-radius: 30px;
-  background-color: var(--dark-blue);
-  color: var(--white);
 }
 
 .cart-link {
