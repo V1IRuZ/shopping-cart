@@ -10,7 +10,9 @@ const useCart = () => {
       const updated = prev.map((item) => {
         if (item.id === product.id) {
           found = true;
-          return { ...item, quantity: item.quantity + 1 };
+          if (item.quantity < 99) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
         }
 
         return item;
