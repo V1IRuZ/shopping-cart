@@ -62,6 +62,7 @@ const ProductCounter = ({ product, setCart }) => {
         </button>
         <label htmlFor="">
           <input
+            aria-label="quantity"
             type="text"
             onChange={(e) => handleChange(e, product.id)}
             value={product.quantity}
