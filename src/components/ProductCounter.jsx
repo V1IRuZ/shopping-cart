@@ -77,6 +77,7 @@ const ProductCounter = ({ product, setCart }) => {
       </div>
       <button
         className="delete-btn"
+        aria-label="remove"
         onClick={() =>
           setCart((prev) => prev.filter((item) => item.id !== product.id))
         }
