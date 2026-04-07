@@ -1,6 +1,7 @@
 import ProductCard from "../features/shop/ProductCard.jsx";
 import CategoryNavigation from "../features/shop/CategoryNavigation.jsx";
 import { useOutletContext } from "react-router";
+import "../styles/Shop.css";
 
 const Shop = () => {
   const { data, handleAddToCart } = useOutletContext();
