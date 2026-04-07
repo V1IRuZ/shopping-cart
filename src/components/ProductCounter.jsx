@@ -1,4 +1,4 @@
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, Trash2 } from "lucide-react";
 
 const ProductCounter = ({ product, setCart }) => {
   const handleChange = (e, id) => {
@@ -52,26 +52,36 @@ const ProductCounter = ({ product, setCart }) => {
   };
 
   return (
-    <div className="product-counter">
+    <div className="product-options">
+      <div className="product-counter">
+        <button
+          aria-label="decrement"
+          onClick={() => handleDecrement(product.id)}
+        >
+          <Minus size={24} />
+        </button>
+        <label htmlFor="">
+          <input
+            type="text"
+            onChange={(e) => handleChange(e, product.id)}
+            value={product.quantity}
+            onBlur={(e) => handleBlur(e)}
+          />
+        </label>
+        <button
+          aria-label="increment"
+          onClick={() => handleIncrement(product.id)}
+        >
+          <Plus size={24} />
+        </button>
+      </div>
       <button
-        aria-label="decrement"
-        onClick={() => handleDecrement(product.id)}
+        className="delete-btn"
+        onClick={() =>
+          setCart((prev) => prev.filter((item) => item.id !== product.id))
+        }
       >
-        <Minus size={24} />
-      </button>
-      <label htmlFor="">
-        <input
-          type="text"
-          onChange={(e) => handleChange(e, product.id)}
-          value={product.quantity}
-          onBlur={(e) => handleBlur(e)}
-        />
-      </label>
-      <button
-        aria-label="increment"
-        onClick={() => handleIncrement(product.id)}
-      >
-        <Plus size={24} />
+        <Trash2 size={24} />
       </button>
     </div>
   );
