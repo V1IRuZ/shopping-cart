@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Slides from "./Slides.jsx";
+import SlideSelectionBar from "./SlideSelectionBar.jsx";
 import NextButton from "./NextButton.jsx";
 import PreviousButton from "./PreviousButton.jsx";
 import "../../styles/Carousel.css";
@@ -30,6 +31,10 @@ const Carousel = () => {
       <PreviousButton onClick={handlePrevious} />
       <Slides activeSlide={activeSlide} />
       <NextButton onClick={handleNext} />
+      <SlideSelectionBar
+        activeSlide={activeSlide}
+        setActiveSlide={setActiveSlide}
+      />
     </div>
   );
 };
