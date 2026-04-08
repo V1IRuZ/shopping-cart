@@ -36,3 +36,32 @@
   top: 50%;
   right: 10px;
 }
+
+.selection-bar {
+  padding: 5px 10px;
+  list-style: none;
+  display: flex;
+  justify-self: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+  background-color: #ffffff49;
+  border-radius: 30px;
+}
+
+.selection-bar li {
+  display: flex;
+  align-content: center;
+}
+
+.selection-bar button {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-style: none;
+}
+
+.selection-bar button.active {
+  background-color: black;
+}
