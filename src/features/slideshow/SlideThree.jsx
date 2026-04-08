@@ -1,4 +1,4 @@
-const SlideThree = () => {
+const SlideThree = ({ active }) => {
   return (
     <div className="slide three">
       <h2>Slide 3</h2>
