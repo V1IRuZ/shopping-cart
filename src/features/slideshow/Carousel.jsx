@@ -7,14 +7,17 @@ import "../../styles/Carousel.css";
 
 const Carousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
+
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % 4);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [paused]);
 
   const handleNext = () => {
     if (activeSlide >= 3) {
@@ -42,6 +45,8 @@ const Carousel = () => {
       <SlideSelectionBar
         activeSlide={activeSlide}
         setActiveSlide={setActiveSlide}
+        paused={paused}
+        setPaused={setPaused}
       />
     </div>
   );

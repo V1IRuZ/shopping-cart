@@ -1,4 +1,11 @@
-const SlideSelectionBar = ({ activeSlide, setActiveSlide }) => {
+import PauseButton from "./PauseButton.jsx";
+
+const SlideSelectionBar = ({
+  activeSlide,
+  setActiveSlide,
+  paused,
+  setPaused,
+}) => {
   return (
     <ul className="selection-bar">
       <li>
@@ -36,6 +43,9 @@ const SlideSelectionBar = ({ activeSlide, setActiveSlide }) => {
             setActiveSlide(3);
           }}
         ></button>
+      </li>
+      <li>
+        <PauseButton paused={paused} setPaused={setPaused} />
       </li>
     </ul>
   );
