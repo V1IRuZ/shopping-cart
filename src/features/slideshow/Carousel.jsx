@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slides from "./Slides.jsx";
 import SlideSelectionBar from "./SlideSelectionBar.jsx";
 import NextButton from "./NextButton.jsx";
@@ -7,6 +7,14 @@ import "../../styles/Carousel.css";
 
 const Carousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % 4);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNext = () => {
     if (activeSlide >= 3) {
