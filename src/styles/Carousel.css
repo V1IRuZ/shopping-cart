@@ -10,6 +10,7 @@
 }
 
 .slide {
+  padding: min(24px, 5vw);
   color: white;
   background-color: var(--dark-blue);
   min-height: 100%;
@@ -76,4 +77,48 @@
   padding: 0;
   background: none;
   border-radius: 0;
+}
+
+.first {
+  padding: min(24px, 5vw) min(72px, 7vw);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.images {
+  margin: auto;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.images img {
+  max-width: 200px;
+  background-color: white;
+  height: auto;
+}
+
+.first .info {
+  padding: min(72px, 6vw);
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.info h3 {
+  font-size: 2rem;
+}
+
+.info p {
+  font-size: 1.5rem;
+}
+
+.info a {
+  font-size: 1.5rem;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 2px solid white;
 }
