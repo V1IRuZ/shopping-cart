@@ -44,7 +44,7 @@ const SlideSelectionBar = ({
           }}
         ></button>
       </li>
-      <li>
+      <li className="pause">
         <PauseButton paused={paused} setPaused={setPaused} />
       </li>
     </ul>
