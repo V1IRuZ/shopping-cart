@@ -5,7 +5,7 @@ import NextButton from "./NextButton.jsx";
 import PreviousButton from "./PreviousButton.jsx";
 import "../../styles/Carousel.css";
 
-const Carousel = () => {
+const Carousel = ({ data }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -40,7 +40,7 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <PreviousButton onClick={handlePrevious} />
-      <Slides activeSlide={activeSlide} />
+      <Slides data={data} activeSlide={activeSlide} />
       <NextButton onClick={handleNext} />
       <SlideSelectionBar
         activeSlide={activeSlide}

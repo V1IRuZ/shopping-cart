@@ -3,7 +3,7 @@ import SlideTwo from "./SlideTwo.jsx";
 import SlideThree from "./SlideThree.jsx";
 import SlideFour from "./SlideFour.jsx";
 
-const Slides = ({ activeSlide }) => {
+const Slides = ({ data, activeSlide }) => {
   const position = activeSlide * 100;
 
   return (
@@ -14,7 +14,7 @@ const Slides = ({ activeSlide }) => {
         transition: "transform 0.5s ease-in-out",
       }}
     >
-      <SlideOne active={activeSlide === 0} />
+      <SlideOne data={data} active={activeSlide === 0} />
       <SlideTwo active={activeSlide === 1} />
       <SlideThree active={activeSlide === 2} />
       <SlideFour active={activeSlide === 3} />
