@@ -5,9 +5,9 @@ const PauseButton = ({ paused, setPaused }) => {
     <button
       aria-label={paused ? "Play slideshow" : "Pause slideshow"}
       className="pause-btn"
-      onClick={paused ? setPaused(false) : setPaused(true)}
+      onClick={() => (paused ? setPaused(false) : setPaused(true))}
     >
-      {paused ? <Play /> : <Pause />}
+      {paused ? <Play fill="black" /> : <Pause fill="black" />}
     </button>
   );
 };
