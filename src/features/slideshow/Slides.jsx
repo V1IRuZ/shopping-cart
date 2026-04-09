@@ -15,9 +15,9 @@ const Slides = ({ data, activeSlide }) => {
       }}
     >
       <SlideOne data={data} active={activeSlide === 0} />
-      <SlideTwo active={activeSlide === 1} />
-      <SlideThree active={activeSlide === 2} />
-      <SlideFour active={activeSlide === 3} />
+      <SlideTwo data={data} active={activeSlide === 1} />
+      <SlideThree data={data} active={activeSlide === 2} />
+      <SlideFour data={data} active={activeSlide === 3} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-const SlideTwo = ({ active }) => {
+const SlideTwo = ({ data, active }) => {
   return (
     <div className="slide two">
       <h2>Slide 2</h2>
