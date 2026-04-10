@@ -79,6 +79,8 @@
   border-radius: 0;
 }
 
+/* Slide 1 */
+
 .first {
   padding: min(24px, 5vw) min(72px, 7vw);
   display: grid;
@@ -121,4 +123,44 @@
   padding: 6px 12px;
   border-radius: 10px;
   border: 2px solid white;
+}
+
+/* Slide 2 */
+
+.two {
+  display: flex;
+}
+
+.two a {
+  margin: auto;
+  display: flex;
+  gap: 36px;
+  flex-direction: column;
+  color: white;
+}
+
+.two h3 {
+  font-size: 2.5rem;
+  align-self: center;
+}
+
+.fragrances {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fragrance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fragrance-item img {
+  width: 70%;
+  height: auto;
+}
+
+.fragrance-item h4 {
+  font-size: 1.5rem;
 }
