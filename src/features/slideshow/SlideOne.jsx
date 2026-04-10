@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 
 const SlideOne = ({ data, active }) => {
-  const bed = data.find((item) => item.id === 11);
+  const bed = data?.find((item) => item.id === 11);
+
+  if (!bed) return null;
 
   return (
     <div className="slide first" inert={!active} aria-hidden={!active}>
