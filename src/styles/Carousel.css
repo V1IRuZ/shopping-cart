@@ -12,7 +12,7 @@
 .slide {
   padding: min(24px, 5vw);
   color: white;
-  background-color: var(--dark-blue);
+  background: linear-gradient( 180deg, var(--dark-blue), black); 
   min-height: 100%;
   min-width: 100%;
 }
@@ -163,4 +163,34 @@
 
 .fragrance-item h4 {
   font-size: 1.5rem;
+}
+
+.three {
+  padding: min(72px, 7vw);
+}
+
+.three a {
+  color: white;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.three img {
+  justify-self: center;
+}
+
+.three .info {
+  align-self: center;
+  margin-left: min(42px, 5vw);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.three span {
+  font-size: 1.5rem;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 2px solid white;
 }
