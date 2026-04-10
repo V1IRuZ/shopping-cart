@@ -1,12 +1,23 @@
-const SlideThree = ({ active }) => {
+import { Link } from "react-router";
+
+const SlideThree = ({ data, active }) => {
+  const dogfood = data.find((item) => item.id === 22);
+
   return (
-    <div className="slide three">
-      <h2>Slide 3</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-        itaque porro temporibus quidem esse dolor, dicta iure eius iusto sit
-        odit a cum?
-      </p>
+    <div className="slide three" inert={!active} aria-hidden={!active}>
+      <Link
+        tabIndex={active ? 0 : -1}
+        to={`/shop/${dogfood.category}/${dogfood.id}`}
+      >
+        <div className="info">
+          <h3>{dogfood.title} for your pet</h3>
+          <p>{dogfood.description}</p>
+          <div>
+            <span>BUY NOW</span>
+          </div>
+        </div>
+        <img src={dogfood.thumbnail} alt="" />
+      </Link>
     </div>
   );
 };
