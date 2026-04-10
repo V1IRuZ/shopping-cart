@@ -4,6 +4,8 @@ import SlideThree from "./SlideThree.jsx";
 import SlideFour from "./SlideFour.jsx";
 
 const Slides = ({ data, activeSlide }) => {
+  if (!data) return null;
+
   const position = activeSlide * 100;
 
   return (
