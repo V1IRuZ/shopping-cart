@@ -1,8 +1,13 @@
 #root {
+  --font-black: #000000;
   --dark-blue: #22333b;
   --background-white: #fafafa;
   --white: #f8f8f8;
   --shadow-grey: #cacaca;
+}
+
+.page {
+  margin: 0 auto;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 100px 1fr 75px;
@@ -80,7 +85,7 @@ footer {
 }
 
 .cart-item a {
-  color: black;
+  color: var(--font-black);
   display: grid;
   align-items: center;
   gap: 24px;
@@ -120,6 +125,10 @@ footer {
   max-width: 50px;
 }
 
+.delete-btn {
+  background-color: var(--background-white);
+}
+
 .checkout {
   padding: 24px;
   align-items: center;
@@ -150,7 +159,7 @@ footer {
 }
 
 .category-list a {
-  color: black;
+  color: var(--font-black);
   font-weight: 600;
   font-size: 1.5rem;
   padding: 4px 8px;
@@ -168,7 +177,7 @@ footer {
 
 .path-nav a,
 .shop-path a {
-  color: black;
+  color: var(--font-black);
   font-size: 1.5rem;
 }
 
