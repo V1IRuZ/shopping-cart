@@ -165,6 +165,8 @@
   font-size: 1.5rem;
 }
 
+/* Slide 3 */
+
 .three {
   padding: min(72px, 7vw);
 }
@@ -193,4 +195,34 @@
   padding: 6px 12px;
   border-radius: 10px;
   border: 2px solid white;
+}
+
+/* Slide 4 */
+
+.four {
+  display: flex;
+  align-items: center;
+}
+
+.four a {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  color: white;
+}
+
+.four h3 {
+  align-self: center;
+  font-size: 2rem;
+}
+
+.items {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.items img {
+  max-width: 15%;
+  height: auto;
 }
