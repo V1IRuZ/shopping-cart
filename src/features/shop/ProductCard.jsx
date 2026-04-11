@@ -4,7 +4,7 @@ import StarRating from "../../components/StarRating.jsx";
 
 const ProductCard = ({ product, onAddtoCart }) => {
   return (
-    <div className="product-card">
+    <li className="product-card">
       <img src={product.thumbnail} alt="" />
       <div className="product-info">
         <Link to={`/shop/${product.category}/${product.id}`}>
@@ -14,7 +14,7 @@ const ProductCard = ({ product, onAddtoCart }) => {
         </Link>
       </div>
       <Button label="ADD TO CART" className="add-btn" onClick={onAddtoCart} />
-    </div>
+    </li>
   );
 };
 
