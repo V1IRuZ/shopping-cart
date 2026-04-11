@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 
 const SlideThree = ({ data, active }) => {
-  const dogfood = data.find((item) => item.id === 22);
+  const dogfood = data?.find((item) => item.id === 22);
+
+  if (!dogfood) return null;
 
   return (
     <div className="slide three" inert={!active} aria-hidden={!active}>

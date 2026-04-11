@@ -12,6 +12,8 @@ const FragranceItem = ({ product }) => {
 const SlideTwo = ({ data, active }) => {
   const fragrances = data?.filter((item) => item.category === "fragrances");
 
+  if (!fragrances) return null;
+
   return (
     <div className="slide two" inert={!active} aria-hidden={!active}>
       <Link tabIndex={active ? 0 : -1} to="/shop/fragrances">
