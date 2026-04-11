@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 const useCategories = (data) => {
-  useMemo(() => {
+  return useMemo(() => {
     const categories = [];
 
     data?.forEach((item) => {
