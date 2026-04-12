@@ -163,23 +163,6 @@ footer {
   gap: 16px;
 }
 
-.category-nav {
-  padding: 20px;
-}
-
-.category-list {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.category-list a {
-  color: var(--font-black);
-  font-weight: 600;
-  font-size: 1.5rem;
-  padding: 4px 8px;
-  border-radius: 10px;
-}
-
 .path-nav,
 .shop-path {
   margin-left: 200px;

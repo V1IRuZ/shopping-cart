@@ -1,8 +1,33 @@
+.category-nav {
+  padding: 20px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.category-list a {
+  color: var(--font-black);
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
 .products {
   display: grid;
   padding: 24px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
+}
+
+.beauty,
+.furniture,
+.fragrances,
+.groceries {
+  border-bottom: 2px solid var(--dark-blue);
+  padding: 24px 0;
 }
 
 .product-card {
