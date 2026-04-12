@@ -5,16 +5,16 @@ const CategoryNavigation = () => {
     <nav className="category-nav">
       <ul className="category-list">
         <li>
-          <Link to="/shop/beauty">Beauty</Link>
+          <Link to="/shop/beauty">BEAUTY</Link>
         </li>
         <li>
-          <Link to="/shop/fragrances">Fragrances</Link>
+          <Link to="/shop/fragrances">FRAGRANCES</Link>
         </li>
         <li>
-          <Link to="/shop/furniture">Furniture</Link>
+          <Link to="/shop/furniture">FURNITURE</Link>
         </li>
         <li>
-          <Link to="/shop/groceries">Groceries</Link>
+          <Link to="/shop/groceries">GROCERIES</Link>
         </li>
       </ul>
     </nav>
