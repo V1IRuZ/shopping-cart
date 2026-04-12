@@ -1,8 +1,10 @@
+import Logo from "../components/Logo.jsx";
+
 const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
-        <h1>WebShopX</h1>
+        <Logo />
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
+import Logo from "../components/Logo.jsx";
 import { Link } from "react-router";
-import { ShoppingCart, Store, House } from "lucide-react";
+import { ShoppingCart, Store } from "lucide-react";
 
 const Navigation = ({ cart }) => {
   const totalItems = cart.reduce((total, item) => (total += item.quantity), 0);
@@ -9,8 +10,7 @@ const Navigation = ({ cart }) => {
       <ul className="main-links">
         <li className="home-link">
           <Link to="/">
-            <House size={36} />
-            <span>HOME</span>
+            <Logo />
           </Link>
         </li>
         <li className="shop-link">
