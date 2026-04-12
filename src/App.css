@@ -8,6 +8,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Vanilla Whale";
+  src:
+    url("./assets/fonts/VanillaWhale-Regular.woff2") format("woff2"),
+    url("./assets/fonts/VanillaWhale-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
   --font-black: #000000;
   --dark-blue: #22333b;
