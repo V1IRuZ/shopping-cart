@@ -20,7 +20,7 @@ function App() {
 
   return (
     <PageLayout cart={cart}>
-      <Outlet context={{ data, loading, error, cart, handleAddToCart, setCart }} />
+      <Outlet context={{ data, cart, handleAddToCart, setCart }} />
     </PageLayout>
   );
 }
