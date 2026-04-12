@@ -4,15 +4,25 @@
 
 .category-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   justify-content: space-evenly;
 }
 
 .category-list a {
-  color: var(--font-black);
+  display: inline-block;
+  background-color: var(--dark-blue);
+  color: var(--white);
   font-weight: 600;
-  font-size: 1.5rem;
-  padding: 4px 8px;
+  font-size: 2rem;
+  padding: 6px 12px;
   border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.category-list a:hover {
+  text-decoration: none;
+  transform: scale(1.1);
 }
 
 .products {
@@ -28,6 +38,10 @@
 .groceries {
   border-bottom: 2px solid var(--dark-blue);
   padding: 24px 0;
+}
+
+.beauty {
+  border-top: 2px solid var(--dark-blue);
 }
 
 .product-card {
