@@ -120,4 +120,37 @@ describe("Carousel component", () => {
 
     expect(slideshow).toHaveStyle("transform: translateX(0%)");
   });
+
+  it("play button continues slideshow after pause", () => {
+    vi.useFakeTimers();
+
+    render(
+      <MemoryRouter>
+        <Carousel data={mockData} />
+      </MemoryRouter>,
+    );
+
+    const pauseBtn = screen.getByRole("button", { name: /pause slideshow/i });
+    const slideshow = screen.getByTestId("slideshow");
+
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
+
+    fireEvent.click(pauseBtn);
+
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
+
+    const playBtn = screen.getByRole("button", { name: /play slideshow/i });
+
+    fireEvent.click(playBtn);
+
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(slideshow).toHaveStyle("transform: translateX(-100%)");
+  });
 });
