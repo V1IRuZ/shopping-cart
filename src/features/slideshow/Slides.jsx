@@ -6,13 +6,14 @@ import SlideFour from "./SlideFour.jsx";
 const Slides = ({ data, activeSlide }) => {
   if (!data) return null;
 
-  const position = activeSlide * 100;
+  const position = activeSlide * -100;
 
   return (
     <div
+      data-testid="slideshow"
       className="slideshow"
       style={{
-        transform: `translateX(-${position}%)`,
+        transform: `translateX(${position}%)`,
         transition: "transform 0.5s ease-in-out",
       }}
     >
