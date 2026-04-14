@@ -6,7 +6,12 @@ const SlideThree = ({ data, active }) => {
   if (!dogfood) return null;
 
   return (
-    <div className="slide three" inert={!active} aria-hidden={!active}>
+    <div
+      data-testid="slide3"
+      className="slide three"
+      inert={!active}
+      aria-hidden={!active}
+    >
       <Link
         tabIndex={active ? 0 : -1}
         to={`/shop/${dogfood.category}/${dogfood.id}`}

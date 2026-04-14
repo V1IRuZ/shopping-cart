@@ -6,7 +6,12 @@ const SlideOne = ({ data, active }) => {
   if (!bed) return null;
 
   return (
-    <div className="slide first" inert={!active} aria-hidden={!active}>
+    <div
+      data-testid="slide1"
+      className="slide first"
+      inert={!active}
+      aria-hidden={!active}
+    >
       <div className="images">
         <img src={bed.images[0]} alt="" />
         <img src={bed.images[1]} alt="" />
