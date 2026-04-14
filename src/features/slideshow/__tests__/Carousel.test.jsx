@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { MemoryRouter } from "react-router";
-import { screen, render, act } from "@testing-library/react";
+import { screen, render, act, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Carousel from "../Carousel.jsx";
 
@@ -77,12 +77,47 @@ describe("Carousel component", () => {
 
     const slideshow = screen.getByTestId("slideshow");
 
-    expect(slideshow).toHaveStyle("transform: translateX(-0%)");
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
 
     act(() => {
       vi.advanceTimersByTime(5000);
     });
 
     expect(slideshow).toHaveStyle("transform: translateX(-100%)");
+
+    act(() => {
+      vi.advanceTimersByTime(10000);
+    });
+
+    expect(slideshow).toHaveStyle("transform: translateX(-300%)");
+
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
+  });
+
+  it("pause button stops slideshow", () => {
+    vi.useFakeTimers();
+
+    render(
+      <MemoryRouter>
+        <Carousel data={mockData} />
+      </MemoryRouter>,
+    );
+
+    const button = screen.getByRole("button", { name: /pause slideshow/i });
+    const slideshow = screen.getByTestId("slideshow");
+
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
+
+    fireEvent.click(button);
+
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(slideshow).toHaveStyle("transform: translateX(0%)");
   });
 });
