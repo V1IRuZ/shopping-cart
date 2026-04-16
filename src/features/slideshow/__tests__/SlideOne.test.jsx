@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router";
 import { screen, render } from "@testing-library/react";
 import SlideOne from "../SlideOne.jsx";
+import userEvent from "@testing-library/user-event";
 
 const mockData = [
   {
@@ -93,5 +94,39 @@ describe("SlideOne component", () => {
     const link = screen.getByRole("link", { name: /see more/i });
 
     expect(link).toHaveAttribute("href", "/shop/furniture/11");
+  });
+
+  it("link has focus while active", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <MemoryRouter>
+        <SlideOne data={mockData} active={true} />
+      </MemoryRouter>,
+    );
+
+    const link = screen.getByRole("link");
+
+    await user.tab();
+
+    expect(link).toHaveFocus();
+  });
+
+  it("link does not has focus while inactive", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <MemoryRouter>
+        <SlideOne data={mockData} active={false} />
+      </MemoryRouter>,
+    );
+
+    const link = screen.getByRole("link", { hidden: true });
+
+    expect(link).toHaveAttribute("tabindex", "-1");
+
+    await user.tab();
+
+    expect(link).not.toHaveFocus();
   });
 });
