@@ -12,7 +12,7 @@
 .slide {
   padding: min(24px, 5vw);
   color: white;
-  background: linear-gradient( 180deg, var(--dark-blue), black); 
+  background: linear-gradient(180deg, var(--dark-blue), black);
   min-height: 100%;
   min-width: 100%;
 }
@@ -201,28 +201,36 @@
 
 .four {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .four a {
   display: flex;
   gap: 24px;
   flex-direction: column;
-  color: white;
 }
 
-.four h3 {
-  align-self: center;
-  font-size: 2rem;
+.four .logo {
+  font-size: 7rem;
 }
 
-.items {
+.four h4 {
   display: flex;
   gap: 16px;
-  justify-content: center;
 }
 
-.items img {
-  max-width: 15%;
-  height: auto;
+.four .cheap,
+.four .allways {
+  letter-spacing: 2px;
+  text-shadow: 2px 2px var(--font-black);
+  font-size: 5rem;
+  font-family: "Vanilla Whale", "Roboto", var(--system-ui);
+}
+
+.four .cheap {
+  color: var(--gold);
+}
+
+.four .allways {
+  color: var(--light-steel);
 }
