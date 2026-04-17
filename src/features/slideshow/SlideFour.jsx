@@ -1,10 +1,7 @@
 import { Link } from "react-router";
+import Logo from "../../components/Logo.jsx";
 
 const SlideFour = ({ data, active }) => {
-  const items = data?.filter((item) => item.category === "beauty");
-
-  if (!items) return null;
-
   return (
     <div
       data-testid="slide4"
@@ -13,12 +10,11 @@ const SlideFour = ({ data, active }) => {
       aria-hidden={!active}
     >
       <Link tabIndex={active ? 0 : -1} to="/shop/beauty">
-        <h3>Beauty products</h3>
-        <div className="items">
-          {items.map((item) => (
-            <img src={item.thumbnail} key={item.id} />
-          ))}
-        </div>
+        <Logo />
+        <h4>
+          <span className="cheap">CHEAP PRICES.</span>
+          <span className="allways">ALLWAYS.</span>
+        </h4>
       </Link>
     </div>
   );
