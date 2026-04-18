@@ -1,0 +1,39 @@
+.groceries-banner {
+  margin: 24px 0;
+}
+
+.groceries-banner a {
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.groceries-banner img {
+  border-radius: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.groceries-banner .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.groceries-banner p {
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  color: var(--font-black);
+  font-size: 3rem;
+}
+
+.groceries-banner span {
+  font-size: 1.5rem;
+  color: var(--font-black);
+  border-radius: 10px;
+  border: 2px solid var(--font-black);
+  padding: 5px 10px;
+}
