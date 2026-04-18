@@ -60,13 +60,6 @@
   color: var(--font-black);
 }
 
-.product-card img {
-  justify-self: center;
-  align-self: center;
-  height: auto;
-  width: 90%;
-}
-
 .product-info {
   display: flex;
   flex-direction: column;
