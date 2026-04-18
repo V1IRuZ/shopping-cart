@@ -18,7 +18,14 @@ const useProductData = () => {
         }
         return response.json();
       })
-      .then((json) => setData(json.products))
+      .then((json) =>
+        setData(
+          json.products.map((item, index) => ({
+            ...item,
+            isDiscount: (index + 1) % 6 === 0,
+          })),
+        ),
+      )
       .catch((error) => {
         if (error.name !== "AbortError") {
           setError(error);
