@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Price from "../../components/Price.jsx";
 import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
 
@@ -10,7 +11,7 @@ const ProductCard = ({ product, onAddtoCart }) => {
         <Link to={`/shop/${product.category}/${product.id}`}>
           <h1 className="product-title">{product.title}</h1>
           <StarRating key={product.id} rating={product.rating} />
-          <h1 className="product-price">{product.price} $</h1>
+          <Price product={product} className="product-price" />
         </Link>
       </div>
       <Button label="ADD TO CART" className="add-btn" onClick={onAddtoCart} />
