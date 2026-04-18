@@ -45,24 +45,26 @@
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   box-shadow:
     2px 2px 5px var(--shadow-grey),
     -2px -2px 5px var(--shadow-grey);
-  display: grid;
-  grid-template-rows: 200px 1fr;
   border-radius: 30px;
   padding: 16px;
 }
 
 .product-card a {
-  color: black;
+  display: grid;
+  grid-template-rows: 200px 1fr;
+  color: var(--font-black);
 }
 
 .product-card img {
   justify-self: center;
   align-self: center;
   height: auto;
-  width: 100px;
+  width: 90%;
 }
 
 .product-info {
@@ -80,7 +82,15 @@
 }
 
 .product-price {
+  display: flex;
+  gap: 8px;
   font-size: 1.5rem;
+}
+
+.product-card .old {
+  font-size: 1rem;
+  color: grey;
+  text-decoration: line-through;
 }
 
 .add-btn {
