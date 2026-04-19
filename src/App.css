@@ -18,6 +18,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "LouisaCP";
+  src:
+    url("./assets/fonts/LouisaCP.woff2") format("woff2"),
+    url("./assets/fonts/LouisaCP.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
   --font-black: #231f20;
   --dark-blue: #22333b;
