@@ -68,3 +68,26 @@
   border: 2px solid var(--font-black);
   padding: 5px 10px;
 }
+
+.delivery {
+  margin: 24px 0;
+  color: var(--light-steel);
+  padding: 24px;
+  background: linear-gradient(180deg, var(--dark-blue), black);
+  font-size: 3rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 24px;
+  font-style: italic;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.delivery svg {
+  color: var(--gold);
+}
+
+.order-process {
+  display: flex;
+}
