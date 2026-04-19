@@ -25,6 +25,8 @@ const useCart = () => {
         {
           title: product.title,
           id: product.id,
+          isDiscount: product.isDiscount,
+          discountPercentage: product.discountPercentage,
           category: product.category,
           image: product.thumbnail,
           price: product.price,
