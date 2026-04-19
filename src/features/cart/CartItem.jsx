@@ -1,9 +1,10 @@
 import ProductCounter from "../../components/ProductCounter.jsx";
-import { formatDecimals } from "../../utils/helpers.js";
+import { formatDecimals, calulateCurrentPrice } from "../../utils/helpers.js";
 import { Link } from "react-router";
 
 const CartItem = ({ product, setCart }) => {
-  const totalPrice = product.quantity * product.price;
+  const currentPrice = calulateCurrentPrice(product);
+  const totalPrice = product.quantity * currentPrice;
   const fixedTotalPrice = formatDecimals(totalPrice);
 
   return (

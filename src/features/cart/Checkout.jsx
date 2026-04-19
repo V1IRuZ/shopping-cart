@@ -1,9 +1,9 @@
-import { formatDecimals } from "../../utils/helpers.js";
+import { formatDecimals, calulateCurrentPrice } from "../../utils/helpers.js";
 import Button from "../../components/ui/Button.jsx";
 
 const Checkout = ({ cart }) => {
   const totalPrice = cart.reduce(
-    (total, item) => (total += item.quantity * item.price),
+    (total, item) => total + item.quantity * calulateCurrentPrice(item),
     0,
   );
 
