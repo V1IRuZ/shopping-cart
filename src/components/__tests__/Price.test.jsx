@@ -20,8 +20,8 @@ describe("Price component", () => {
       <Price product={mockProductWithDiscount} className="product-price" />,
     );
 
-    expect(screen.getByText(/90.00/i)).toBeInTheDocument();
-    expect(screen.getByText(/100/i)).toBeInTheDocument();
+    expect(screen.getByText("90.00$")).toBeInTheDocument();
+    expect(screen.getByText("100$")).toBeInTheDocument();
   });
 
   it("renders only the discount for a product that is on sale", () => {
@@ -29,7 +29,7 @@ describe("Price component", () => {
       <Price product={mockProductWithNormalPrice} className="product-price" />,
     );
 
-    expect(screen.getByText(/60/i)).toBeInTheDocument();
-    expect(screen.queryByText(/48.00/i)).not.toBeInTheDocument();
+    expect(screen.getByText("60$")).toBeInTheDocument();
+    expect(screen.queryByText("48.00$")).not.toBeInTheDocument();
   });
 });
