@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import StarRating from "../../components/StarRating.jsx";
 import styles from "../../styles/CategoryCard.module.css";
 import Button from "../../components/ui/Button.jsx";
+import ProductImage from "../../components/ProductImage.jsx";
 
 const CategoryCard = ({ product }) => {
   return (
@@ -10,9 +11,7 @@ const CategoryCard = ({ product }) => {
         className={styles.link}
         to={`/shop/${product.category}/${product.id}`}
       >
-        <div className={styles["image-wrapper"]}>
-          <img src={product.thumbnail} alt="" className={styles.image} />
-        </div>
+        <ProductImage product={product} />
         <div className={styles.info}>
           <h1 className={styles.title}>{product.title}</h1>
           <StarRating key={product.id} rating={product.rating} />
