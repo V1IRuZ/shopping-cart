@@ -22,7 +22,7 @@ const SlideTwo = ({ data, active }) => {
       aria-hidden={!active}
     >
       <Link tabIndex={active ? 0 : -1} to="/shop/fragrances">
-        <h3>SEE OUR SELECTION OF FRAGRANCES</h3>
+        <h3>Elegant Fragrances</h3>
         <ul className="fragrances-list">
           {fragrances.map((item) => (
             <FragranceItem product={item} key={item.id} />
