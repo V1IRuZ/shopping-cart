@@ -13,13 +13,13 @@ const DeliverySection = () => {
     <section className="delivery">
       <p>FAST AND RELIABLE DELIVERY</p>
       <div className="order-process">
-        <ShoppingCart size={iconSize} />
-        <MoveRight size={iconSize} />
-        <ClipboardList size={iconSize} />
-        <MoveRight size={iconSize} />
-        <PackageCheck size={iconSize} />
-        <MoveRight size={iconSize} />
-        <Van size={iconSize} />
+        <ShoppingCart size={iconSize} data-testid="icon" />
+        <MoveRight size={iconSize} data-testid="icon" />
+        <ClipboardList size={iconSize} data-testid="icon" />
+        <MoveRight size={iconSize} data-testid="icon" />
+        <PackageCheck size={iconSize} data-testid="icon" />
+        <MoveRight size={iconSize} data-testid="icon" />
+        <Van size={iconSize} data-testid="icon" />
       </div>
     </section>
   );
