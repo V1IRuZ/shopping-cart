@@ -3,6 +3,7 @@ import StarRating from "../../components/StarRating.jsx";
 import styles from "../../styles/CategoryCard.module.css";
 import Button from "../../components/ui/Button.jsx";
 import ProductImage from "../../components/ProductImage.jsx";
+import Price from "../../components/Price.jsx";
 
 const CategoryCard = ({ product }) => {
   return (
@@ -19,7 +20,7 @@ const CategoryCard = ({ product }) => {
         </div>
       </Link>
       <div className={styles.order}>
-        <h2 className={styles.price}>{product.price} $</h2>
+        <Price product={product} />
         <div>
           <Button label="ADD TO CART" className="add-btn" />
         </div>
