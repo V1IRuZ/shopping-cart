@@ -5,7 +5,7 @@ import Button from "../../components/ui/Button.jsx";
 import ProductImage from "../../components/ProductImage.jsx";
 import Price from "../../components/Price.jsx";
 
-const CategoryCard = ({ product }) => {
+const CategoryCard = ({ product, handleAddToCart }) => {
   return (
     <li className={styles.card}>
       <Link
@@ -22,7 +22,11 @@ const CategoryCard = ({ product }) => {
       <div className={styles.order}>
         <Price product={product} />
         <div>
-          <Button label="ADD TO CART" className="add-btn" />
+          <Button
+            label="ADD TO CART"
+            className="add-btn"
+            onClick={() => handleAddToCart(product)}
+          />
         </div>
       </div>
     </li>
