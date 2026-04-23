@@ -14,6 +14,12 @@ const Shop = () => {
     <>
       <CategoryNavigation />
       <CategorySection
+        category={categories.sale}
+        handleAddToCart={handleAddToCart}
+        sectionClassName="sale"
+        headerText="This weeks discounts!"
+      />
+      <CategorySection
         category={categories.beauty}
         handleAddToCart={handleAddToCart}
         sectionClassName="beauty"
