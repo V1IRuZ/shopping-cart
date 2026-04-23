@@ -1,6 +1,8 @@
 import ProductCounter from "../../components/ProductCounter.jsx";
 import Button from "../../components/ui/Button.jsx";
 import StarRating from "../../components/StarRating.jsx";
+import ProductImage from "../../components/ProductImage.jsx";
+import Price from "../../components/Price.jsx";
 import PathNavigation from "./PathNavigation.jsx";
 import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
@@ -12,15 +14,14 @@ const Product = ({ product, cart, setCart }) => {
     <>
       <PathNavigation product={product} />
       <div className="product">
+        <ProductImage product={product} />
         <div className="details">
           <div className="main-info">
             <div className="title">
               <h1>{product.title}</h1>
               <StarRating key={product.id} rating={product.rating} />
             </div>
-            <div className="price">
-              <h3>{product.price} $</h3>
-            </div>
+            <Price product={product} />
           </div>
           <div className="description">
             <h2>Product details</h2>
@@ -39,6 +40,8 @@ const Product = ({ product, cart, setCart }) => {
                     {
                       title: product.title,
                       id: product.id,
+                      isDiscount: product.isDiscount,
+                      discountPercentage: product.discountPercentage,
                       category: product.category,
                       image: product.thumbnail,
                       price: product.price,
@@ -51,9 +54,6 @@ const Product = ({ product, cart, setCart }) => {
             <AvailabilityStatus availability={product.availabilityStatus} />
             <span>{product.shippingInformation}</span>
           </div>
-        </div>
-        <div className="image">
-          <img src={product.thumbnail} alt="" />
         </div>
       </div>
       <CommentSection reviews={product.reviews} />
