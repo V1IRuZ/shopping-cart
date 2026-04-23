@@ -9,13 +9,13 @@ const Price = ({ product }) => {
 
     return (
       <h2 className={styles.price}>
-        <span >{fixedDiscountedPrice}$</span>
+        <span className={styles.discount} >{fixedDiscountedPrice}$</span>
         <span className={styles.regular}>{product.price}$</span>
       </h2>
     );
   }
 
-  return <h2>{product.price}$</h2>;
+  return <h2 className={styles.normal}>{product.price}$</h2>;
 };
 
 export default Price;

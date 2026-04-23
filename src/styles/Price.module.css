@@ -1,7 +1,11 @@
 .price {
   display: flex;
   gap: 8px;
-  font-size: 1.5rem;
+}
+
+.discount,
+.normal {
+  font-size: 1.7rem;
 }
 
 .regular {
