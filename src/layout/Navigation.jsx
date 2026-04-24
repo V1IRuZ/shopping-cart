@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { ShoppingCart, Store } from "lucide-react";
 
 const Navigation = ({ cart }) => {
-  const totalItems = cart.reduce((total, item) => (total += item.quantity), 0);
+  const totalItems = cart.reduce((total, item) => (total + item.quantity), 0);
 
   return (
     <nav>

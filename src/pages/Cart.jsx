@@ -5,7 +5,7 @@ import Checkout from "../features/cart/Checkout.jsx"
 const Cart = () => {
   const { cart, setCart } = useOutletContext();
 
-  const totalItems = cart.reduce((total, item) => (total += item.quantity), 0);
+  const totalItems = cart.reduce((total, item) => (total + item.quantity), 0);
 
   return (
     <>
