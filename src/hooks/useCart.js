@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const useCart = () => {
   const [cart, setCart] = useState([]);
+  const [showNotification, setShowNotification] = useState(false);
+  const [currentProductId, setCurrentProductId] = useState(null);
+  const timerRef = useRef(null);
 
   const handleAddToCart = (product) => {
+    setShowNotification(true);
+    setCurrentProductId(product.id);
+
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
     setCart((prev) => {
       let found = false;
 
@@ -34,9 +44,17 @@ const useCart = () => {
         },
       ];
     });
+
+    timerRef.current = setTimeout(() => {
+      setShowNotification(false);
+    }, 2000);
   };
 
-  return { cart, handleAddToCart, setCart };
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current);
+  }, []);
+
+  return { cart, handleAddToCart, setCart, showNotification, currentProductId };
 };
 
 export { useCart };
