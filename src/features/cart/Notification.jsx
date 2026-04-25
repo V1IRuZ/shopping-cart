@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 
-const Notification = ({ cart, currentProduct }) => {
-  const currentCartProduct = cart?.find((item) => item.id === currentProduct);
+const Notification = ({ cart, currentProductId }) => {
+  const currentCartProduct = cart?.find((item) => item.id === currentProductId);
 
   if (!currentCartProduct) return null;
 
