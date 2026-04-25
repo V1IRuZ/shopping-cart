@@ -1,0 +1,25 @@
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  z-index: 100;
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  background-color: var(--background-white);
+  padding: 16px;
+  min-width: 400px;
+  bottom: -100%;
+  right: 50%;
+}
+
+.image {
+  height: 60px;
+}
+
+.quantity {
+  border-radius: 20px;
+  background-color: var(--red);
+  color: white;
+  padding: 0 8px;
+}
