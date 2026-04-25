@@ -81,4 +81,13 @@
   border-radius: 30px;
   background-color: var(--dark-blue);
   color: var(--white);
+  transition: transform 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+}
+
+.add-btn:active {
+  transform: scale(0.95);
 }
