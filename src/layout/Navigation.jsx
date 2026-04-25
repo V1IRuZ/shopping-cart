@@ -1,10 +1,9 @@
 import Logo from "../components/Logo.jsx";
 import { Link } from "react-router";
-import { ShoppingCart, Store } from "lucide-react";
+import { Car, Store } from "lucide-react";
+import CartLink from "../features/cart/CartLink.jsx";
 
-const Navigation = ({ cart }) => {
-  const totalItems = cart.reduce((total, item) => (total + item.quantity), 0);
-
+const Navigation = ({ cart, showNotification, currentProductId }) => {
   return (
     <nav>
       <ul className="main-links">
@@ -19,15 +18,11 @@ const Navigation = ({ cart }) => {
             <span>SHOP</span>
           </Link>
         </li>
-        <li className="cart-link">
-          <Link to="/cart" className="cart-svg">
-            {totalItems > 0 && (
-              <span className="total-items">{totalItems}</span>
-            )}
-            <ShoppingCart size={36} />
-            <span className="cart-link-title">CART</span>
-          </Link>
-        </li>
+        <CartLink
+          cart={cart}
+          showNotification={showNotification}
+          currentProductId={currentProductId}
+        />
       </ul>
     </nav>
   );
