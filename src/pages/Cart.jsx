@@ -1,11 +1,12 @@
 import { useOutletContext } from "react-router";
 import CartList from "../features/cart/CartList.jsx";
-import Checkout from "../features/cart/Checkout.jsx"
+import Checkout from "../features/cart/Checkout.jsx";
+import "../styles/Cart.css";
 
 const Cart = () => {
   const { cart, setCart } = useOutletContext();
 
-  const totalItems = cart.reduce((total, item) => (total + item.quantity), 0);
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <>

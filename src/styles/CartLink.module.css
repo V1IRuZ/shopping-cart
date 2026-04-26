@@ -1,0 +1,21 @@
+.cart {
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.link {
+  position: relative;
+}
+
+.quantity {
+  font-family: "Roboto", var(--system-ui);
+  color: white;
+  z-index: 1;
+  padding: 2px 5px;
+  position: absolute;
+  font-size: 1.1rem;
+  top: -8px;
+  right: -4px;
+  background-color: var(--red);
+  border-radius: 10px;
+}
