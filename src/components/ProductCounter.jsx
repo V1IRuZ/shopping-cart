@@ -1,4 +1,5 @@
 import { Plus, Minus, Trash2 } from "lucide-react";
+import styles from "../styles/ProductCounter.module.css";
 
 const ProductCounter = ({ product, setCart }) => {
   const handleChange = (e, id) => {
@@ -52,8 +53,8 @@ const ProductCounter = ({ product, setCart }) => {
   };
 
   return (
-    <div className="product-options">
-      <div className="product-counter">
+    <div className={styles.options}>
+      <div className={styles.counter}>
         <button
           aria-label="decrement"
           onClick={() => handleDecrement(product.id)}
@@ -62,6 +63,7 @@ const ProductCounter = ({ product, setCart }) => {
         </button>
         <label htmlFor="">
           <input
+            className={styles.input}
             aria-label="quantity"
             type="text"
             onChange={(e) => handleChange(e, product.id)}
@@ -77,7 +79,7 @@ const ProductCounter = ({ product, setCart }) => {
         </button>
       </div>
       <button
-        className="delete-btn"
+        className={styles.delete}
         aria-label="remove"
         onClick={() =>
           setCart((prev) => prev.filter((item) => item.id !== product.id))

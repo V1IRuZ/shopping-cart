@@ -1,0 +1,24 @@
+.options {
+  display: grid;
+  grid-template-columns: 140px 50px;
+  gap: 10px;
+}
+
+.counter {
+  border-radius: 30px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  text-align: center;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  max-width: 50px;
+}
+
+.delete {
+  background-color: var(--background-white);
+}
