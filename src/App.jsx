@@ -21,6 +21,7 @@ function App() {
 
   return (
     <PageLayout
+      data={data}
       cart={cart}
       showNotification={showNotification}
       currentProductId={currentProductId}
