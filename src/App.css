@@ -123,8 +123,61 @@ header .main-links {
   font-size: 1.4rem;
 }
 
+.search-bar {
+  flex: 1;
+}
+
+.search-bar label {
+  align-items: center;
+  position: relative;
+}
+
+.search-bar svg {
+  position: absolute;
+  top: -50%;
+  right: 2%;
+}
+
+.search-bar input {
+  position: relative;
+  padding: 4px 12px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  min-width: 100%;
+}
+
+.search-results {
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  min-width: 100%;
+  max-height: 500px;
+  overflow: auto;
+  position: absolute;
+  z-index: 100;
+  background-color: var(--background-white);
+}
+
+.search-result a {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-family: "Roboto", var(--system-ui);
+  color: var(--font-black);
+  text-shadow: none;
+  align-items: center;
+  padding: 2px 4px;
+}
+
+.search-result a:hover {
+  background-color: var(--shadow-grey);
+}
+
+.search-result img {
+  height: 40px;
+  width: auto;
+}
+
 .cart-link {
-  margin-left: auto;
   position: relative;
 }
 
