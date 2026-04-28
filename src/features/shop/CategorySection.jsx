@@ -11,7 +11,7 @@ const CategorySection = ({
 
   return (
     <section className={sectionClassName}>
-      <h2>{headerText}</h2>
+      <h2 className="category-header">{headerText}</h2>
       <ul className="products">
         {category.map((product) => (
           <ProductCard

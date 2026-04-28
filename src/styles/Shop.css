@@ -2,6 +2,13 @@
   padding: 20px;
 }
 
+.category-header {
+  font-family: "Roboto", var(--system-ui);
+  color: var(--dark-blue);
+  font-size: 2rem;
+  text-shadow: 2px 2px var(--light-steel);
+}
+
 .category-list {
   display: flex;
   flex-wrap: wrap;

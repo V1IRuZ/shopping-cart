@@ -17,31 +17,31 @@ const Shop = () => {
         category={categories.sale}
         handleAddToCart={handleAddToCart}
         sectionClassName="sale"
-        headerText="This weeks discounts!"
+        headerText="THIS WEEK'S DISCOUNTS!"
       />
       <CategorySection
         category={categories.beauty}
         handleAddToCart={handleAddToCart}
         sectionClassName="beauty"
-        headerText="Our beauty products"
+        headerText="BEAUTY PRODUCTS"
       />
       <CategorySection
         category={categories.fragrances}
         handleAddToCart={handleAddToCart}
         sectionClassName="fragrances"
-        headerText="Find our fragrances here"
+        headerText="FRAGRANCES"
       />
       <CategorySection
         category={categories.furniture}
         handleAddToCart={handleAddToCart}
         sectionClassName="furniture"
-        headerText="Our stylish furniture"
+        headerText="FOR INTERIOR DESIGN"
       />
       <CategorySection
         category={categories.groceries}
         handleAddToCart={handleAddToCart}
         sectionClassName="groceries"
-        headerText="Daily grocery shopping"
+        headerText="GROCERIES"
       />
     </>
   );
