@@ -12,24 +12,26 @@
 .category-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
   justify-content: space-evenly;
+  gap: 16px;
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  background-color: var(--dark-blue);
 }
 
 .category-list a {
+  font-family: "Vanilla Whale", "Roboto", var(--system-ui);
+  text-shadow: 2px 2px var(--font-black);
   display: inline-block;
-  background-color: var(--dark-blue);
-  color: var(--white);
+  color: var(--gold);
   font-weight: 600;
   font-size: 2rem;
   padding: 6px 12px;
   border-radius: 10px;
-  transition: transform 0.4s ease-in-out;
 }
 
 .category-list a:hover {
-  text-decoration: none;
-  transform: scale(1.1);
+  text-decoration: underline;
 }
 
 .products {
