@@ -15,7 +15,7 @@ const CartItem = ({ product, setCart }) => {
       </Link>
       <div className="item-total">
         <ProductCounter product={product} setCart={setCart} />
-        <h2 className="price">Price: {fixedTotalPrice} $</h2>
+        <h2 className="cart-price">{fixedTotalPrice}$</h2>
       </div>
     </li>
   );

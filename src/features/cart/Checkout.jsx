@@ -10,12 +10,15 @@ const Checkout = ({ cart }) => {
   const fixedTotalPrice = formatDecimals(totalPrice);
 
   return (
-    <div className="checkout">
-      <div className="btn">
-        <Button label="CHECKOUT" className="checkout-btn" />
+    <>
+      <div className="total-order">
+        <h2>TOTAL</h2>
+        <h2>{fixedTotalPrice} $</h2>
       </div>
-      <h1>Total: {fixedTotalPrice} $</h1>
-    </div>
+      <div className="checkout">
+        <Button label="PROCEED TO CHECKOUT" className="checkout-btn" />
+      </div>
+    </>
   );
 };
 

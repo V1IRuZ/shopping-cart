@@ -11,12 +11,14 @@ const Cart = () => {
   const emptyCart = cart.length <= 0;
 
   if (emptyCart) {
-    return <EmptyCart />
+    return <EmptyCart />;
   }
 
   return (
     <>
-      <h1>There are {totalItems} products in your cart</h1>
+      <h2 className="cart-total">
+        There are <span>{totalItems}</span> products in your cart
+      </h2>
       <CartList cart={cart} setCart={setCart} />
       <Checkout cart={cart} />
     </>
