@@ -1,7 +1,7 @@
 import { formatDecimals, calulateCurrentPrice } from "../../utils/helpers.js";
 import Button from "../../components/ui/Button.jsx";
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, onClick }) => {
   const totalPrice = cart.reduce(
     (total, item) => total + item.quantity * calulateCurrentPrice(item),
     0,
@@ -16,7 +16,11 @@ const Checkout = ({ cart }) => {
         <h2>{fixedTotalPrice} $</h2>
       </div>
       <div className="checkout">
-        <Button label="PROCEED TO CHECKOUT" className="checkout-btn" />
+        <Button
+          label="PROCEED TO CHECKOUT"
+          className="checkout-btn"
+          onClick={onClick}
+        />
       </div>
     </>
   );
