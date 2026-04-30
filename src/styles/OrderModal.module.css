@@ -35,6 +35,12 @@
   color: var(--gold);
 }
 
+.summary {
+  composes: layout;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--gold);
+}
+
 .list {
   composes: layout;
   display: flex;

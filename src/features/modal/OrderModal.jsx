@@ -31,6 +31,9 @@ const OrderModal = ({ cart, ref, onClose }) => {
           <CircleX size={32} />
         </button>
       </div>
+      <div className={styles.summary}>
+        <h3 className={styles.heading}>SUMMARY</h3>
+      </div>
       <ul className={styles.list}>
         {cart.map((item) => (
           <OrderItem key={item.id} product={item} />
