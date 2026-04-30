@@ -1,25 +1,45 @@
 import Button from "../../components/ui/Button.jsx";
+import TotalPrice from "../../components/TotalPrice.jsx";
+import styles from "../../styles/OrderModal.module.css";
+import { X, CircleX } from "lucide-react";
 
 const OrderItem = ({ product }) => {
   return (
-    <li>
-      <h2>{product.title}</h2>
-      <p>{product.quantity}</p>
+    <li className={styles.product}>
+      <div className={styles.details}>
+        <img src={product.image} alt="" className={styles.image} />
+        <h2 className={styles.title}>{product.title}</h2>
+      </div>
+      <div className={styles.amount}>
+        <X />
+        <span className={styles.quantity}>{product.quantity}</span>
+      </div>
     </li>
   );
 };
 
-const OrderModal = ({ cart, ref }) => {
+const OrderModal = ({ cart, ref, onClose }) => {
   return (
-    <dialog ref={ref} className="modal">
-      <ul>
+    <dialog ref={ref} className={styles.modal}>
+      <div className={styles.header}>
+        <h3 className={styles.text}>YOUR ORDER</h3>
+        <button
+          aria-label="Cancel order"
+          className={styles.close}
+          onClick={onClose}
+        >
+          <CircleX size={32} />
+        </button>
+      </div>
+      <ul className={styles.list}>
         {cart.map((item) => (
-          <OrderItem product={item} />
+          <OrderItem key={item.id} product={item} />
         ))}
       </ul>
-      <div className="modal-btns">
-        <Button className="confirm-btn" label="CONFIRM" />
-        <Button className="cancel-btn" label="CANCEL" />
+      <TotalPrice cart={cart} className={styles.total} />
+      <div className={styles.buttons}>
+        <Button className={styles.confirm} label="CONFIRM" />
+        <Button className={styles.cancel} label="CANCEL" onClick={onClose} />
       </div>
     </dialog>
   );
