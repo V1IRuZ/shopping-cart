@@ -21,9 +21,13 @@ const Cart = () => {
     orderRef.current?.showModal();
   };
 
+  const handleCloseModal = () => {
+    orderRef.current?.close();
+  }
+
   return (
     <>
-      <OrderModal cart={cart} ref={orderRef} />
+      <OrderModal cart={cart} ref={orderRef} onClose={handleCloseModal} />
       <h2 className="cart-total">
         There are <span>{totalItems}</span> products in your cart
       </h2>
