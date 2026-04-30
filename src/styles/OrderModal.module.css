@@ -1,0 +1,105 @@
+.modal[open] {
+  min-width: min(500px, 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 20px;
+  border: 2px solid var(--dark-blue);
+}
+
+.modal[open]::backdrop {
+  background-color: var(--font-black);
+  opacity: 0.6;
+}
+
+.layout {
+  padding: 16px 24px;
+}
+
+.text {
+  margin-left: 20px;
+  color: var(--white);
+}
+
+.header {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}
+
+.close {
+  background-color: var(--dark-blue);
+  margin-left: auto;
+  color: var(--gold);
+}
+
+.list {
+  composes: layout;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.image {
+  height: 50px;
+  width: auto;
+}
+
+.title {
+  font-weight: 100;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantity {
+  font-size: 1.5rem;
+}
+
+.total {
+  border-top: 2px solid var(--gold);
+  font-size: 1.7rem;
+  display: flex;
+  padding: 16px 24px 8px;
+  gap: 24px;
+}
+
+.buttons {
+  composes: layout;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.confirm {
+  composes: btn;
+}
+
+.cancel {
+  composes: btn;
+}
