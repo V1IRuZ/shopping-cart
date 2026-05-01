@@ -18,7 +18,7 @@ const OrderItem = ({ product }) => {
   );
 };
 
-const OrderModal = ({ cart, ref, onClose }) => {
+const OrderModal = ({ cart, ref, onCancel, onConfirm }) => {
   return (
     <dialog ref={ref} className={styles.modal}>
       <div className={styles.header}>
@@ -26,7 +26,7 @@ const OrderModal = ({ cart, ref, onClose }) => {
         <button
           aria-label="Cancel order"
           className={styles.close}
-          onClick={onClose}
+          onClick={onCancel}
         >
           <CircleX size={32} />
         </button>
@@ -41,8 +41,12 @@ const OrderModal = ({ cart, ref, onClose }) => {
       </ul>
       <TotalPrice cart={cart} className={styles.total} />
       <div className={styles.buttons}>
-        <Button className={styles.confirm} label="CONFIRM" />
-        <Button className={styles.cancel} label="CANCEL" onClick={onClose} />
+        <Button
+          className={styles.confirm}
+          label="CONFIRM"
+          onClick={onConfirm}
+        />
+        <Button className={styles.cancel} label="CANCEL" onClick={onCancel} />
       </div>
     </dialog>
   );
