@@ -42,6 +42,9 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --box-shadow:
     2px 2px 5px var(--shadow-grey), -2px -2px 5px var(--shadow-grey);
+  --transition: transform 0.3s ease-in-out;
+  --scale-bigger: scale(1.05);
+  --scale-smaller: scale(0.95);
 }
 
 .page {
