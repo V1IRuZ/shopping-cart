@@ -10,7 +10,7 @@ const CartLink = ({ cart, showNotification, currentProductId }) => {
     <li className={styles.cart}>
       <Link to="/cart" className={styles.link}>
         {totalItems > 0 && <span className={styles.quantity}>{totalItems}</span>}
-        <ShoppingCart size={36} />
+        <ShoppingCart className={styles.icon} size={36} />
         <span>CART</span>
       </Link>
       {showNotification && (

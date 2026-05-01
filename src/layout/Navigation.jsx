@@ -9,12 +9,12 @@ const Navigation = ({ cart, data, showNotification, currentProductId }) => {
     <nav>
       <ul className="main-links">
         <li className="home-link">
-          <Link to="/">
+          <Link className="link" to="/">
             <Logo />
           </Link>
         </li>
         <li className="shop-link">
-          <Link to="/shop">
+          <Link className="link" to="/shop">
             <Store size={36} />
             <span>SHOP</span>
           </Link>

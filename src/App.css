@@ -106,7 +106,7 @@ header .main-links {
   gap: min(108px, 7vw);
 }
 
-.main-links a {
+.main-links .link {
   font-family: "Vanilla Whale", "Roboto", var(--system-ui);
   text-shadow: 2px 2px var(--font-black);
   display: flex;
@@ -117,7 +117,7 @@ header .main-links {
   font-weight: 100;
 }
 
-.main-links a svg {
+.main-links .link svg {
   color: var(--gold);
 }
 

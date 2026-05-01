@@ -5,6 +5,18 @@
 
 .link {
   position: relative;
+  font-family: "Vanilla Whale", "Roboto", var(--system-ui);
+  text-shadow: 2px 2px var(--font-black);
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  color: var(--light-steel);
+  font-weight: 100;
+}
+
+.icon {
+  color: var(--gold);
 }
 
 .quantity {
