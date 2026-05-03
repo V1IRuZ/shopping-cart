@@ -12,6 +12,9 @@ const Result = ({ product, onClick }) => {
 };
 
 const SearchResults = ({ results, onClick }) => {
+
+  if (results.length <= 0) return null
+
   return (
     <ul className="search-results">
       {results.map((item) => (
