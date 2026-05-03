@@ -5,7 +5,12 @@ import styles from "../../styles/ConfirmationModal.module.css";
 
 const ConfirmationModal = ({ ref, onClose }) => {
   return (
-    <dialog ref={ref} onCancel={onClose} className={styles.modal}>
+    <dialog
+      ref={ref}
+      onCancel={onClose}
+      className={styles.modal}
+      data-testid="confirmation"
+    >
       <div className={styles.header}>
         <button aria-label="Close" onClick={onClose} className={styles.close}>
           <CircleX size={32} />

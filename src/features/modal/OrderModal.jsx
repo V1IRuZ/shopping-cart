@@ -20,7 +20,7 @@ const OrderItem = ({ product }) => {
 
 const OrderModal = ({ cart, ref, onCancel, onConfirm }) => {
   return (
-    <dialog ref={ref} className={styles.modal}>
+    <dialog data-testid="order" ref={ref} className={styles.modal}>
       <div className={styles.header}>
         <h3 className={styles.text}>YOUR ORDER</h3>
         <button
