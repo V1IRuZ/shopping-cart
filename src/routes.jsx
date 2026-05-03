@@ -4,11 +4,13 @@ import Shop from "./pages/Shop.jsx";
 import Cart from "./pages/Cart.jsx";
 import Category from "./pages/Category.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import InvalidRoute from "./pages/InvalidRoute.jsx";
 
 const routes = [
   {
     path: "/",
     element: <App />,
+    errorElement: <InvalidRoute />,
     children: [
       {
         index: true,
