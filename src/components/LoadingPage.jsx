@@ -1,7 +1,12 @@
+import Spinner from "./ui/Spinner.jsx";
+import Logo from "./Logo.jsx";
+
 const LoadingPage = () => {
   return (
     <div className="loading">
-      <h1>Loading...</h1>
+      <Logo />
+      <Spinner />
+      <h2>Loading...</h2>
     </div>
   );
 };
