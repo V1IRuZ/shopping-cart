@@ -222,3 +222,40 @@ footer .logo {
   justify-content: center;
   gap: 8px;
 }
+
+.loading {
+  background-color: var(--background-white);
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.spinner {
+  display: flex;
+}
+
+.wheel {
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--light-steel);
+  border-radius: 50%;
+  border-bottom-color: var(--dark-blue);
+  animation: Spin 1s infinite;
+}
+
+.loading h2 {
+  color: var(--font-black);
+}
+
+@keyframes Spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
