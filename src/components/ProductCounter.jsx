@@ -56,6 +56,7 @@ const ProductCounter = ({ product, setCart }) => {
     <div className={styles.options}>
       <div className={styles.counter}>
         <button
+          className={styles.decrement}
           aria-label="decrement"
           onClick={() => handleDecrement(product.id)}
         >
@@ -72,6 +73,7 @@ const ProductCounter = ({ product, setCart }) => {
           />
         </label>
         <button
+          className={styles.increment}
           aria-label="increment"
           onClick={() => handleIncrement(product.id)}
         >

@@ -6,19 +6,38 @@
 
 .counter {
   border-radius: 30px;
-  border: 2px solid black;
   display: flex;
+  gap: 4px;
   justify-content: center;
   align-items: center;
 }
 
 .input {
+  background-color: var(--red);
+  color: var(--white);
   text-align: center;
-  border: 1px solid black;
+  border-radius: 10px;
+  border: 1px solid var(--red);
   font-size: 1.5rem;
   max-width: 50px;
 }
 
+.btn {
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--dark-blue);
+}
+
+.increment,
+.decrement {
+  composes: btn;
+}
+
 .delete {
-  background-color: var(--background-white);
+  margin: auto;
+  border-radius: 10px;
+  color: var(--white);
+  padding: 8px;
+  background-color: var(--dark-blue);
 }
