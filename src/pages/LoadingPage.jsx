@@ -1,5 +1,5 @@
-import Spinner from "./ui/Spinner.jsx";
-import Logo from "./Logo.jsx";
+import Spinner from "../components/ui/Spinner.jsx";
+import Logo from "../components/Logo.jsx"
 
 const LoadingPage = () => {
   return (

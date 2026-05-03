@@ -2,8 +2,8 @@ import "./App.css";
 import PageLayout from "./layout/PageLayout.jsx";
 import { Outlet } from "react-router";
 import { useProductData } from "./hooks/useProductsData.js";
-import LoadingPage from "./components/LoadingPage.jsx";
-import ErrorPage from "./components/ErrorPage.jsx";
+import LoadingPage from "./pages/LoadingPage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 import { useCart } from "./hooks/useCart.js";
 
 function App() {
