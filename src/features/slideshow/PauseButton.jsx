@@ -7,7 +7,7 @@ const PauseButton = ({ paused, setPaused }) => {
       className="pause-btn"
       onClick={() => (paused ? setPaused(false) : setPaused(true))}
     >
-      {paused ? <Play fill="black" /> : <Pause fill="black" />}
+      {paused ? <Play fill="#bb7b03" /> : <Pause fill="#bb7b03" />}
     </button>
   );
 };
