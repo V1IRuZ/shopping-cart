@@ -12,24 +12,25 @@ const SlideOne = ({ data, active }) => {
       inert={!active}
       aria-hidden={!active}
     >
-      <div className="images">
-        <img src={bed.images[0]} alt="" />
-        <img src={bed.images[1]} alt="" />
-        <img src={bed.images[2]} alt="" />
-        <img src={bed.thumbnail} alt="" />
-      </div>
-      <div className="info">
-        <h3>{bed.title}</h3>
-        <p>{bed.description}</p>
-        <div className="link">
-          <Link
-            tabIndex={active ? 0 : -1}
-            to={`/shop/${bed.category}/${bed.id}`}
-          >
-            SEE MORE
-          </Link>
+      <Link
+        className="slide1-link"
+        tabIndex={active ? 0 : -1}
+        to={`/shop/${bed.category}/${bed.id}`}
+      >
+        <div className="images">
+          <img src={bed.images[0]} alt="" />
+          <img src={bed.images[1]} alt="" />
+          <img src={bed.images[2]} alt="" />
+          <img src={bed.thumbnail} alt="" />
         </div>
-      </div>
+        <div className="info">
+          <h3>{bed.title}</h3>
+          <p>{bed.description}</p>
+          <div className="link">
+            <span>SEE MORE</span>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };

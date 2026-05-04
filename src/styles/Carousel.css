@@ -85,9 +85,13 @@
 
 .first {
   padding: min(24px, 5vw) min(72px, 7vw);
+}
+
+.slide1-link {
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr 2fr;
+  color: var(--white);
 }
 
 .images {
@@ -120,7 +124,7 @@
   font-size: 1.5rem;
 }
 
-.info a {
+.info span {
   font-size: 1.5rem;
   color: white;
   padding: 6px 12px;
