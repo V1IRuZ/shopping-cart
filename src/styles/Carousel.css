@@ -21,6 +21,7 @@
 
 .previous-btn,
 .next-btn {
+  color: var(--white);
   background-color: #1818182c;
   position: absolute;
   z-index: 10;
@@ -28,6 +29,12 @@
   padding: 5px;
   border-style: none;
   border-radius: 10px;
+}
+
+.previous-btn:hover,
+.next-btn:hover {
+  color: var(--font-black);
+  background-color: rgba(255, 255, 255, 0.781);
 }
 
 .previous-btn {
