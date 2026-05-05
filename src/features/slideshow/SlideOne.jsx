@@ -18,10 +18,10 @@ const SlideOne = ({ data, active }) => {
         to={`/shop/${bed.category}/${bed.id}`}
       >
         <div className="images">
-          <img src={bed.images[0]} alt="" />
-          <img src={bed.images[1]} alt="" />
-          <img src={bed.images[2]} alt="" />
-          <img src={bed.thumbnail} alt="" />
+          <img src={bed.images[0]} alt="" className="bed1" />
+          <img src={bed.images[1]} alt="" className="bed2" />
+          <img src={bed.images[2]} alt="" className="bed3" />
+          <img src={bed.thumbnail} alt="" className="bed4" />
         </div>
         <div className="info">
           <h3>{bed.title}</h3>
