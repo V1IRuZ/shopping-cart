@@ -8,7 +8,7 @@
 .slideshow {
   display: flex;
   width: 100%;
-  min-height: 400px;
+  height: 400px;
 }
 
 .slide {
@@ -117,7 +117,7 @@
 }
 
 .first .info {
-  padding: min(72px, 6vw);
+  padding: min(72px, 4vw);
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -218,6 +218,7 @@
 .four {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .four a {
@@ -227,7 +228,7 @@
 }
 
 .four .logo {
-  font-size: 7rem;
+  font-size: clamp(3rem, 7vw, 7rem);
 }
 
 .four h4 {
@@ -239,7 +240,7 @@
 .four .allways {
   letter-spacing: 2px;
   text-shadow: 2px 2px var(--font-black);
-  font-size: 5rem;
+  font-size: clamp(1.5rem, 6vw, 5rem);
   font-family: "Vanilla Whale", "Roboto", var(--system-ui);
 }
 
@@ -249,4 +250,123 @@
 
 .four .allways {
   color: var(--light-steel);
+}
+
+@media (max-width: 1200px) {
+  .first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .first .slide1-link {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .first .images {
+    align-items: center;
+    display: flex;
+  }
+
+  .bed2,
+  .bed3,
+  .bed4 {
+    display: none;
+  }
+
+  .two {
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .two .fragrance-item img {
+    width: auto;
+  }
+
+  .two .fragrance-item h4 {
+    display: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .first .info p {
+    display: none;
+  }
+
+  .two .fragrances-list li:nth-child(even) {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .three h3 {
+    text-wrap: unset;
+  }
+
+  .three a {
+    display: flex;
+  }
+
+  .three a img {
+    width: 40%;
+  }
+
+  .three .info p {
+    display: none;
+  }  
+}
+
+@media (max-width: 500px) {
+  .first .slide1-link {
+    flex-direction: column;
+  }
+
+  .first .info h3 {
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.5rem;
+  }
+
+  .first .info span {
+    display: none;
+  }
+
+  .two h3 {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .three .info {
+    margin: 0;
+  }
+
+  .three h3 {
+    color: var(--gold);
+    font-size: 1.6rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .three a {
+    padding: auto;
+    flex-direction: column;
+  }
+
+  .three span {
+    display: none;
+  }
+
+  .three a img {
+    width: auto;
+  }
 }
