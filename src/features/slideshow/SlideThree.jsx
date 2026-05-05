@@ -17,7 +17,7 @@ const SlideThree = ({ data, active }) => {
         to={`/shop/${dogfood.category}/${dogfood.id}`}
       >
         <div className="info">
-          <h3>{dogfood.title} for your pet</h3>
+          <h3>{dogfood.title} for your friend</h3>
           <p>{dogfood.description}</p>
           <div>
             <span>BUY NOW</span>
