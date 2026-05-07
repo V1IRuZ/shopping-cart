@@ -45,3 +45,22 @@
   align-content: center;
   font-size: 2rem;
 }
+
+@media (max-width: 750px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .order {
+    display: flex;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .link {
+    display: flex;
+    flex-direction: column;
+  }
+}
