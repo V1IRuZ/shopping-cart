@@ -108,8 +108,10 @@ header nav {
 header .main-links {
   display: flex;
   align-items: center;
-  gap: min(108px, 7vw);
+  gap: min(108px, 4vw);
 }
+
+
 
 .main-links .link {
   font-family: "Vanilla Whale", "Roboto", var(--system-ui);
@@ -157,7 +159,7 @@ header .main-links {
   border: 2px solid var(--gold);
   border-radius: 10px;
   min-width: 100%;
-  max-height: 500px;
+  max-height: 300px;
   overflow: auto;
   position: absolute;
   z-index: 100;
@@ -295,5 +297,38 @@ footer .logo {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 710px) {
+  .search-bar {
+    width: 100%;
+    grid-row: 2/3;
+    grid-column: 1/4;
+    padding: 0;
+  }
+
+  .search-bar input {
+    max-width: 100%;
+  }
+
+  .main-links li:last-child {
+    justify-items: end;
+  }
+
+  .search-results li:last-child {
+    justify-items: start;
+  }
+
+
+  header .main-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 50px;
+    justify-content: space-evenly;
+  }
+
+  .search-result {
+    max-height: 300px;
   }
 }
