@@ -7,6 +7,7 @@
   color: var(--dark-blue);
   font-size: 2rem;
   text-shadow: 2px 2px var(--light-steel);
+  padding: min(3vw, 20px);
 }
 
 .category-list {
