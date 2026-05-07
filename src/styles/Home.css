@@ -23,14 +23,17 @@
 
 .groceries-banner a,
 .furniture-banner a {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 24px;
-  display: flex;
   gap: 16px;
   align-items: center;
 }
 
 .groceries-banner img,
 .furniture-banner img {
+  width: 100%;
+  height: auto;
   border-radius: 30px;
   box-shadow: var(--box-shadow);
 }
@@ -41,7 +44,7 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 24px;
+  padding: min(2vw, 24px);
 }
 
 .groceries-banner p {
@@ -49,15 +52,15 @@
   font-style: italic;
   text-align: center;
   color: var(--font-black);
-  font-size: 3rem;
+  font-size: min(6vw + 6px, 3rem);
 }
 
 .furniture-banner p {
-  padding-left: min(72px, 5vw);
+  padding-left: min(72px, 4vw);
   font-weight: 900;
   font-style: italic;
   color: var(--font-black);
-  font-size: 2rem;
+  font-size: min(5vw + 5px, 1.8rem);
 }
 
 .groceries-banner span,
@@ -74,8 +77,9 @@
   color: var(--light-steel);
   padding: 24px;
   background: linear-gradient(180deg, var(--dark-blue), black);
-  font-size: 3rem;
+  font-size: min(5vw + 8px, 3rem);
   border-radius: 30px;
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
   gap: 24px;
@@ -90,4 +94,12 @@
 
 .order-process {
   display: flex;
+}
+
+@media (max-width: 988px) {
+  .groceries-banner a,
+  .furniture-banner a {
+    display: flex;
+    flex-direction: column;
+  }
 }
