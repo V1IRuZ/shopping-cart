@@ -31,7 +31,7 @@ const SearchInput = ({ data }) => {
   };
 
   return (
-    <li className="search-bar">
+    <li className="search-bar" onBlur={(e) => handleBlur(e)}>
       <label>
         <input
           defaultValue={value}
