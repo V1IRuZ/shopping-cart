@@ -37,7 +37,6 @@ const SearchInput = ({ data }) => {
           defaultValue={value}
           placeholder="Search Products"
           type="text"
-          on
           onFocus={() => setShowResults(true)}
           onChange={(e) => handleChange(e)}
           onBlur={(e) => handleBlur(e)}
