@@ -38,7 +38,8 @@
   gap: 24px;
 }
 
-.details .stock {
+.details .stock,
+.shipping {
   display: flex;
   gap: 8px;
 }
