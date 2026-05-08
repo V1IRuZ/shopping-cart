@@ -21,6 +21,10 @@
   color: var(--white);
 }
 
+.icon {
+  flex-shrink: 0;
+}
+
 .header {
   background-color: var(--dark-blue);
   display: flex;
@@ -84,6 +88,7 @@
   border-top: 2px solid var(--gold);
   font-size: 1.7rem;
   display: flex;
+  flex-wrap: wrap;
   padding: 16px 24px 8px;
   gap: 24px;
 }
@@ -116,4 +121,10 @@
 .confirm:active,
 .cancel:active {
   transform: var(--scaele-smaller);
+}
+
+@media (max-width: 450px) {
+  .image {
+    display: none;
+  }
 }

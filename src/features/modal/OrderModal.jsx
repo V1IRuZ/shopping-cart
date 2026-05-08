@@ -11,7 +11,7 @@ const OrderItem = ({ product }) => {
         <h2 className={styles.title}>{product.title}</h2>
       </div>
       <div className={styles.amount}>
-        <X />
+        <X size={24} className={styles.icon} />
         <span className={styles.quantity}>{product.quantity}</span>
       </div>
     </li>

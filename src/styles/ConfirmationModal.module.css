@@ -39,6 +39,7 @@
 .text {
   font-size: 2rem;
   color: var(--font-black);
+  text-align: center;
 }
 
 .return {
