@@ -5,7 +5,7 @@ const StarRating = ({ rating }) => {
   const array = [0, 1, 2, 3, 4];
 
   return (
-    <div className="star-rating" style={{ display: "flex" }}>
+    <div style={{ display: "flex" }}>
       {array.map((value) =>
         value < rating && value < integer ? (
           <Star data-testid={value} key={value} fill="gold" />
@@ -15,7 +15,9 @@ const StarRating = ({ rating }) => {
           <Star data-testid={value} key={value} fill="white" />
         ),
       )}
-      <span className="rating">{rating}</span>
+      <span style={{ marginLeft: "8px", fontWeight: "500" }}>
+        ({rating})
+      </span>
     </div>
   );
 };

@@ -52,6 +52,8 @@
   outline-color: var(--focus-color);
 }
 
+/* MAIN LAYOUT */
+
 .page {
   font-family: "Roboto", var(--system-ui);
   margin: 0 auto;
@@ -76,6 +78,8 @@ main,
 .footer-content {
   width: clamp(320px, 100%, 1440px);
 }
+
+/* HEADER */
 
 header {
   position: sticky;
@@ -184,6 +188,8 @@ header .main-links {
   width: auto;
 }
 
+/* FOOTER */
+
 footer {
   text-align: center;
   background-color: var(--dark-blue);
@@ -194,10 +200,7 @@ footer .logo {
   font-size: 2rem;
 }
 
-.star-rating .rating {
-  margin-left: 8px;
-  font-weight: 500;
-}
+/* PATH LINKS */
 
 .path-nav,
 .shop-path {
@@ -212,6 +215,8 @@ footer .logo {
   color: var(--font-black);
   font-size: 1.5rem;
 }
+
+/* ERROR PAGES */
 
 .not-found {
   font-family: "Roboto", var(--system-ui);
@@ -253,6 +258,8 @@ footer .logo {
   color: var(--font-black);
   font-size: 2rem;
 }
+
+/* LOADING PAGE */
 
 .loading {
   background-color: var(--background-white);
