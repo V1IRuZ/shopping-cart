@@ -9,7 +9,8 @@
   border-radius: 20px;
   background-color: var(--background-white);
   padding: 16px;
-  min-width: 400px;
+  height: 100px;
+  width: min(90vw, 400px);
   bottom: -100%;
   right: 50%;
 }
@@ -18,9 +19,19 @@
   height: 60px;
 }
 
+.title {
+  font-size: min(1.2rem, 3vw + 5px);
+}
+
 .quantity {
   border-radius: 20px;
   background-color: var(--red);
   color: white;
   padding: 0 8px;
+}
+
+@media (max-width: 710px) {
+  .notification {
+    right: 0;
+  }
 }

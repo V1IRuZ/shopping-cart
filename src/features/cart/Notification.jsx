@@ -10,7 +10,7 @@ const Notification = ({ cart, currentProductId }) => {
   return (
     <Link to="/cart" className={styles.notification}>
       <img src={currentCartProduct.image} alt="" className={styles.image} />
-      <span>{currentCartProduct.title}</span>
+      <span className={styles.title}>{currentCartProduct.title}</span>
       <X />
       <span className={styles.quantity}>{currentCartProduct.quantity}</span>
     </Link>
