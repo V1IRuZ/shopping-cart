@@ -11,7 +11,14 @@ const Category = () => {
   return (
     <>
       <ShopPath />
-      <ul className="category">
+      <ul
+        style={{
+          padding: "16px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px",
+        }}
+      >
         {selectedCategory.map((item) => (
           <CategoryCard
             key={item.id}

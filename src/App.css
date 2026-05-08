@@ -111,8 +111,6 @@ header .main-links {
   gap: min(108px, 4vw);
 }
 
-
-
 .main-links .link {
   font-family: "Vanilla Whale", "Roboto", var(--system-ui);
   text-shadow: 2px 2px var(--font-black);
@@ -199,13 +197,6 @@ footer .logo {
 .star-rating .rating {
   margin-left: 8px;
   font-weight: 500;
-}
-
-.category {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 .path-nav,
