@@ -11,6 +11,7 @@ const DiscountSection = ({ data, handleAddToCart }) => {
       <ul className="discounts">
         {discountProducts.map((item) => (
           <ProductCard
+            key={item.id}
             product={item}
             onAddtoCart={() => handleAddToCart(item)}
           />

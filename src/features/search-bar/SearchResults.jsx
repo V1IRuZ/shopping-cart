@@ -12,13 +12,12 @@ const Result = ({ product, onClick }) => {
 };
 
 const SearchResults = ({ results, onClick }) => {
-
-  if (results.length <= 0) return null
+  if (results.length <= 0) return null;
 
   return (
     <ul className="search-results">
       {results.map((item) => (
-        <Result product={item} onClick={onClick} />
+        <Result key={item.id} product={item} onClick={onClick} />
       ))}
     </ul>
   );
