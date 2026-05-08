@@ -6,6 +6,7 @@ import Price from "../../components/Price.jsx";
 import PathNavigation from "./PathNavigation.jsx";
 import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
+import ShippingInformation from "./ShippingInformation.jsx";
 
 const Product = ({ product, cart, setCart }) => {
   const cartProduct = cart.find((item) => item.id === product.id);
@@ -52,7 +53,7 @@ const Product = ({ product, cart, setCart }) => {
               />
             )}
             <AvailabilityStatus availability={product.availabilityStatus} />
-            <span>{product.shippingInformation}</span>
+            <ShippingInformation shipping={product.shippingInformation} />
           </div>
         </div>
       </div>
