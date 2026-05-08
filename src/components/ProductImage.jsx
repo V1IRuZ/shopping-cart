@@ -13,7 +13,7 @@ const ProductImage = ({ product }) => {
 
   return (
     <div className={styles.wrapper}>
-      <img src={product.thumbnail} alt="" />
+      <img className={styles.image} src={product.thumbnail} alt="" />
     </div>
   );
 };
