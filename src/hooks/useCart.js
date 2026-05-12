@@ -110,4 +110,4 @@ const useCart = () => {
   };
 };
 
-export { useCart };
+export { useCart, cartReducer };
