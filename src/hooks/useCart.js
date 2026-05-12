@@ -1,49 +1,96 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useReducer, useRef, useEffect } from "react";
+
+function cartReducer(cart, action) {
+  switch (action.type) {
+    case "add_once": {
+      return [
+        ...cart,
+        {
+          title: action.title,
+          id: action.id,
+          isDiscount: action.isDiscount,
+          discountPercentage: action.discountPercentage,
+          category: action.category,
+          image: action.image,
+          price: action.price,
+          quantity: 1,
+        },
+      ];
+    }
+    case "add_quantity": {
+      return cart.map((product) => {
+        if (product.id === action.id) {
+          return { ...product, quantity: action.quantity };
+        }
+
+        return product;
+      });
+    }
+    case "increment": {
+      return cart.map((product) => {
+        if (product.id === action.id) {
+          return { ...product, quantity: product.quantity + 1 };
+        }
+
+        return product;
+      });
+    }
+    case "decrement": {
+      return cart.map((product) => {
+        if (product.id === action.id) {
+          return { ...product, quantity: product.quantity - 1 };
+        }
+
+        return product;
+      });
+    }
+    case "remove": {
+      return cart.filter((product) => product.id !== action.id);
+    }
+    case "clear_all": {
+      return [];
+    }
+    default: {
+      throw Error("Unknown action " + action.type);
+    }
+  }
+}
 
 const useCart = () => {
-  const [cart, setCart] = useState([]);
+  const [cart, dispatchCart] = useReducer(cartReducer, []);
   const [showNotification, setShowNotification] = useState(false);
   const [currentProductId, setCurrentProductId] = useState(null);
   const timerRef = useRef(null);
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (addedItem) => {
     setShowNotification(true);
-    setCurrentProductId(product.id);
+    setCurrentProductId(addedItem.id);
 
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
 
-    setCart((prev) => {
-      let found = false;
+    const foundProduct = cart.find((product) => product.id === addedItem.id);
 
-      const updated = prev.map((item) => {
-        if (item.id === product.id) {
-          found = true;
-          if (item.quantity < 99) {
-            return { ...item, quantity: item.quantity + 1 };
-          }
-        }
-
-        return item;
+    if (foundProduct) {
+      if (foundProduct.quantity < 99) {
+        dispatchCart({
+          type: "increment",
+          id: addedItem.id,
+        });
+      }
+    } else {
+      dispatchCart({
+        type: "add_once",
+        title: addedItem.title,
+        id: addedItem.id,
+        isDiscount: addedItem.isDiscount,
+        discountPercentage: addedItem.discountPercentage,
+        category: addedItem.category,
+        image: addedItem.thumbnail,
+        price: addedItem.price,
       });
-
-      if (found) return updated;
-
-      return [
-        ...prev,
-        {
-          title: product.title,
-          id: product.id,
-          isDiscount: product.isDiscount,
-          discountPercentage: product.discountPercentage,
-          category: product.category,
-          image: product.thumbnail,
-          price: product.price,
-          quantity: 1,
-        },
-      ];
-    });
+    }
 
     timerRef.current = setTimeout(() => {
       setShowNotification(false);
@@ -54,7 +101,13 @@ const useCart = () => {
     return () => clearTimeout(timerRef.current);
   }, []);
 
-  return { cart, handleAddToCart, setCart, showNotification, currentProductId };
+  return {
+    cart,
+    handleAddToCart,
+    dispatchCart,
+    showNotification,
+    currentProductId,
+  };
 };
 
 export { useCart };
