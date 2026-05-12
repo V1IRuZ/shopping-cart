@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Search } from "lucide-react";
 import SearchResults from "./SearchResults";
+import { ShopContext } from "../../context/ShopContext";
 
-const SearchInput = ({ data }) => {
+const SearchInput = () => {
+  const { data } = useContext(ShopContext);
   const [value, setValue] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);

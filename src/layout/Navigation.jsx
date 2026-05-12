@@ -4,7 +4,7 @@ import { Car, Store } from "lucide-react";
 import CartLink from "../features/cart/CartLink.jsx";
 import SearchInput from "../features/search-bar/SearchInput.jsx";
 
-const Navigation = ({ cart, data, showNotification, currentProductId }) => {
+const Navigation = () => {
   return (
     <nav>
       <ul className="main-links">
@@ -19,12 +19,8 @@ const Navigation = ({ cart, data, showNotification, currentProductId }) => {
             <span>SHOP</span>
           </Link>
         </li>
-        <SearchInput data={data} />
-        <CartLink
-          cart={cart}
-          showNotification={showNotification}
-          currentProductId={currentProductId}
-        />
+        <SearchInput />
+        <CartLink />
       </ul>
     </nav>
   );

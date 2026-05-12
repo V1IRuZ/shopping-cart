@@ -1,15 +1,10 @@
 import Navigation from "./Navigation.jsx";
 
-const Header = ({ cart, data, showNotification, currentProductId }) => {
+const Header = () => {
   return (
     <header>
       <div className="header-content">
-        <Navigation
-          data={data}
-          cart={cart}
-          showNotification={showNotification}
-          currentProductId={currentProductId}
-        />
+        <Navigation />
       </div>
     </header>
   );
