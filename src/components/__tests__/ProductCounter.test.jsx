@@ -1,8 +1,9 @@
 import { describe, it, expect, vi } from "vitest";
-import { useState } from "react";
+import { useReducer } from "react";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ProductCounter from "../ProductCounter.jsx";
+import { cartReducer } from "../../hooks/useCart.js";
 
 const mockProducts = [
   { title: "shirt", id: 1, quantity: 3, price: 10.4 },
@@ -11,13 +12,13 @@ const mockProducts = [
 ];
 
 const Wrapper = ({ productIndex }) => {
-  const [cart, setCart] = useState(mockProducts);
+  const [cart, dispatchCart] = useReducer(cartReducer, mockProducts)
 
   const testedProduct = cart[productIndex];
 
   return (
     <>
-      <ProductCounter product={testedProduct} setCart={setCart} />
+      <ProductCounter product={testedProduct} dispatchCart={dispatchCart} />
     </>
   );
 };
@@ -35,7 +36,7 @@ describe("ProductCounter component", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
+    render(<ProductCounter product={mockProducts[0]} dispatchCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "increment" });
     await user.click(button);
@@ -47,7 +48,7 @@ describe("ProductCounter component", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
+    render(<ProductCounter product={mockProducts[0]} dispatchCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "decrement" });
     await user.click(button);
@@ -59,7 +60,7 @@ describe("ProductCounter component", () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
-    render(<ProductCounter product={mockProducts[0]} setCart={onClick} />);
+    render(<ProductCounter product={mockProducts[0]} dispatchCart={onClick} />);
 
     const button = screen.getByRole("button", { name: "remove" });
     await user.click(button);
