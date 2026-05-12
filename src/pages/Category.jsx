@@ -1,9 +1,11 @@
 import CategoryCard from "../features/category/CategoryCard.jsx";
 import ShopPath from "../features/category/ShopPath.jsx";
-import { useParams, useOutletContext } from "react-router";
+import { useParams } from "react-router";
+import { useContext } from "react";
+import { ShopContext } from "../context/ShopContext.js";
 
 const Category = () => {
-  const { data, handleAddToCart } = useOutletContext();
+  const { data, handleAddToCart } = useContext(ShopContext);
   const { category } = useParams();
 
   const selectedCategory = data.filter((item) => item.category === category);

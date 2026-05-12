@@ -2,7 +2,7 @@ import ProductCounter from "../../components/ProductCounter.jsx";
 import { formatDecimals, calulateCurrentPrice } from "../../utils/helpers.js";
 import { Link } from "react-router";
 
-const CartItem = ({ product, setCart }) => {
+const CartItem = ({ product, dispatchCart }) => {
   const currentPrice = calulateCurrentPrice(product);
   const totalPrice = product.quantity * currentPrice;
   const fixedTotalPrice = formatDecimals(totalPrice);
@@ -14,7 +14,7 @@ const CartItem = ({ product, setCart }) => {
         <h1 className="title">{product.title}</h1>
       </Link>
       <div className="item-total">
-        <ProductCounter product={product} setCart={setCart} />
+        <ProductCounter product={product} dispatchCart={dispatchCart} />
         <h2 className="cart-price">{fixedTotalPrice}$</h2>
       </div>
     </li>

@@ -1,11 +1,12 @@
 import CategorySection from "../features/shop/CategorySection.jsx";
 import CategoryNavigation from "../features/shop/CategoryNavigation.jsx";
 import { useCategories } from "../hooks/useCategories.js";
-import { useOutletContext } from "react-router";
+import { useContext } from "react";
+import { ShopContext } from "../context/ShopContext.js";
 import "../styles/Shop.css";
 
 const Shop = () => {
-  const { data, handleAddToCart } = useOutletContext();
+  const { data, handleAddToCart } = useContext(ShopContext);
   const categories = useCategories(data);
 
   if (!categories) return null;

@@ -1,10 +1,10 @@
 import CartItem from "./CartItem.jsx";
 
-const CartList = ({ cart, setCart }) => {
+const CartList = ({ cart, dispatchCart }) => {
   return (
     <ul>
       {cart.map((item) => (
-        <CartItem key={item.id} product={item} setCart={setCart} />
+        <CartItem key={item.id} product={item} dispatchCart={dispatchCart} />
       ))}
     </ul>
   );

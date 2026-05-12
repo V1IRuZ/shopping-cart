@@ -1,5 +1,6 @@
-import { useRef } from "react";
-import { useOutletContext, useNavigate } from "react-router";
+import { useRef, useContext } from "react";
+import { ShopContext } from "../context/ShopContext.js";
+import { useNavigate } from "react-router";
 import CartList from "../features/cart/CartList.jsx";
 import Checkout from "../features/cart/Checkout.jsx";
 import EmptyCart from "../features/cart/EmptyCart.jsx";
@@ -8,7 +9,7 @@ import ConfirmationModal from "../features/modal/ConfirmationModal.jsx";
 import "../styles/Cart.css";
 
 const Cart = () => {
-  const { cart, setCart } = useOutletContext();
+  const { cart, dispatchCart } = useContext(ShopContext);
   const orderRef = useRef(null);
   const confirmationRef = useRef(null);
   const navigate = useNavigate();
@@ -34,7 +35,9 @@ const Cart = () => {
   };
 
   const handleCloseConfirmationModal = () => {
-    setCart([]);
+    dispatchCart({
+      type: "clear_all",
+    });
     confirmationRef.current?.close();
     navigate("/");
   };
@@ -54,7 +57,7 @@ const Cart = () => {
       <h2 className="cart-total">
         There are <span>{totalItems}</span> products in your cart
       </h2>
-      <CartList cart={cart} setCart={setCart} />
+      <CartList cart={cart} dispatchCart={dispatchCart} />
       <Checkout cart={cart} onClick={handleOpenOrderModal} />
     </>
   );

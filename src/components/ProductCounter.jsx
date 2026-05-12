@@ -1,8 +1,8 @@
 import { Plus, Minus, Trash2 } from "lucide-react";
 import styles from "../styles/ProductCounter.module.css";
 
-const ProductCounter = ({ product, setCart }) => {
-  const handleChange = (e, id) => {
+const ProductCounter = ({ product, dispatchCart }) => {
+  const handleChange = (e) => {
     const inputValue = e.target.value;
     const regex = /^\d{0,2}$/;
 
@@ -14,42 +14,39 @@ const ProductCounter = ({ product, setCart }) => {
       return;
     }
 
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: Number(inputValue) } : item,
-      ),
-    );
+    dispatchCart({
+      type: "add_quantity",
+      id: product.id,
+      quantity: Number(inputValue),
+    });
   };
 
   const handleBlur = (e) => {
     const val = Number(e.target.value);
     if (val <= 0) {
-      setCart((prev) => prev.filter((item) => item.id !== product.id));
+      dispatchCart({
+        type: "remove",
+        id: product.id,
+      });
     }
   };
 
-  const handleIncrement = (id) => {
-    setCart((prev) =>
-      prev.map((item) => {
-        if (item.id === id && item.quantity < 99) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-
-        return item;
-      }),
-    );
+  const handleIncrement = () => {
+    if (product.quantity < 99) {
+      dispatchCart({
+        type: "increment",
+        id: product.id,
+      });
+    }
   };
 
-  const handleDecrement = (id) => {
-    setCart((prev) =>
-      prev.map((item) => {
-        if (item.id === id && item.quantity > 1) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
-
-        return item;
-      }),
-    );
+  const handleDecrement = () => {
+    if (product.quantity > 1) {
+      dispatchCart({
+        type: "decrement",
+        id: product.id,
+      });
+    }
   };
 
   return (
@@ -58,7 +55,7 @@ const ProductCounter = ({ product, setCart }) => {
         <button
           className={styles.decrement}
           aria-label="decrement"
-          onClick={() => handleDecrement(product.id)}
+          onClick={handleDecrement}
         >
           <Minus size={24} />
         </button>
@@ -67,7 +64,7 @@ const ProductCounter = ({ product, setCart }) => {
             className={styles.input}
             aria-label="quantity"
             type="text"
-            onChange={(e) => handleChange(e, product.id)}
+            onChange={(e) => handleChange(e)}
             value={product.quantity}
             onBlur={(e) => handleBlur(e)}
           />
@@ -75,7 +72,7 @@ const ProductCounter = ({ product, setCart }) => {
         <button
           className={styles.increment}
           aria-label="increment"
-          onClick={() => handleIncrement(product.id)}
+          onClick={handleIncrement}
         >
           <Plus size={24} />
         </button>
@@ -84,7 +81,10 @@ const ProductCounter = ({ product, setCart }) => {
         className={styles.delete}
         aria-label="remove"
         onClick={() =>
-          setCart((prev) => prev.filter((item) => item.id !== product.id))
+          dispatchCart({
+            type: "remove",
+            id: product.id,
+          })
         }
       >
         <Trash2 size={24} />

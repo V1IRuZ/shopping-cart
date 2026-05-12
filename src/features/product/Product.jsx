@@ -8,7 +8,7 @@ import CommentSection from "./CommentSection.jsx";
 import AvailabilityStatus from "./AvailabilityStatus.jsx";
 import ShippingInformation from "./ShippingInformation.jsx";
 
-const Product = ({ product, cart, setCart }) => {
+const Product = ({ product, cart, dispatchCart }) => {
   const cartProduct = cart.find((item) => item.id === product.id);
 
   return (
@@ -30,25 +30,26 @@ const Product = ({ product, cart, setCart }) => {
           </div>
           <div className="add">
             {cartProduct ? (
-              <ProductCounter product={cartProduct} setCart={setCart} />
+              <ProductCounter
+                product={cartProduct}
+                dispatchCart={dispatchCart}
+              />
             ) : (
               <Button
                 className="add-btn"
                 label="ADD TO CART"
                 onClick={() =>
-                  setCart((prev) => [
-                    ...prev,
-                    {
-                      title: product.title,
-                      id: product.id,
-                      isDiscount: product.isDiscount,
-                      discountPercentage: product.discountPercentage,
-                      category: product.category,
-                      image: product.thumbnail,
-                      price: product.price,
-                      quantity: 1,
-                    },
-                  ])
+                  dispatchCart({
+                    type: "add_once",
+                    title: product.title,
+                    id: product.id,
+                    isDiscount: product.isDiscount,
+                    discountPercentage: product.discountPercentage,
+                    category: product.category,
+                    image: product.thumbnail,
+                    price: product.price,
+                    quantity: 1,
+                  })
                 }
               />
             )}

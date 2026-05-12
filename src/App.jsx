@@ -9,8 +9,13 @@ import { useCart } from "./hooks/useCart.js";
 
 function App() {
   const { data, loading, error } = useProductData();
-  const { cart, handleAddToCart, setCart, showNotification, currentProductId } =
-    useCart();
+  const {
+    cart,
+    handleAddToCart,
+    dispatchCart,
+    showNotification,
+    currentProductId,
+  } = useCart();
 
   if (error) {
     return <ErrorPage />;
@@ -21,14 +26,23 @@ function App() {
   }
 
   return (
-    <ShopContext value={{ cart, data, showNotification, currentProductId }}>
+    <ShopContext
+      value={{
+        cart,
+        dispatchCart,
+        handleAddToCart,
+        data,
+        showNotification,
+        currentProductId,
+      }}
+    >
       <PageLayout
         data={data}
         cart={cart}
         showNotification={showNotification}
         currentProductId={currentProductId}
       >
-        <Outlet context={{ data, cart, handleAddToCart, setCart }} />
+        <Outlet />
       </PageLayout>
     </ShopContext>
   );
