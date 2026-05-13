@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import CartLink from "../CartLink.jsx";
+import { ShopContext } from "../../../context/ShopContext.js";
 
 const mockCart = [
   {
@@ -28,11 +29,15 @@ describe("CartLink component", () => {
   it("displays the number of products in the shopping cart", () => {
     render(
       <MemoryRouter>
-        <CartLink
-          cart={mockCart}
-          showNotification={false}
-          currentProductId={1}
-        />
+        <ShopContext
+          value={{
+            cart: mockCart,
+            showNotification: false,
+            currentProductId: 1,
+          }}
+        >
+          <CartLink />
+        </ShopContext>
       </MemoryRouter>,
     );
 
@@ -42,11 +47,15 @@ describe("CartLink component", () => {
   it("link directs to cart", () => {
     render(
       <MemoryRouter>
-        <CartLink
-          cart={mockCart}
-          showNotification={false}
-          currentProductId={1}
-        />
+        <ShopContext
+          value={{
+            cart: mockCart,
+            showNotification: false,
+            currentProductId: 1,
+          }}
+        >
+          <CartLink />
+        </ShopContext>
       </MemoryRouter>,
     );
 
@@ -58,11 +67,15 @@ describe("CartLink component", () => {
   it("displays notification", () => {
     render(
       <MemoryRouter>
-        <CartLink
-          cart={mockCart}
-          showNotification={true}
-          currentProductId={3}
-        />
+        <ShopContext
+          value={{
+            cart: mockCart,
+            showNotification: true,
+            currentProductId: 3,
+          }}
+        >
+          <CartLink />
+        </ShopContext>
       </MemoryRouter>,
     );
 
@@ -73,11 +86,15 @@ describe("CartLink component", () => {
   it("doest not display notification while not active", () => {
     render(
       <MemoryRouter>
-        <CartLink
-          cart={mockCart}
-          showNotification={false}
-          currentProductId={3}
-        />
+        <ShopContext
+          value={{
+            cart: mockCart,
+            showNotification: false,
+            currentProductId: 3,
+          }}
+        >
+          <CartLink />
+        </ShopContext>
       </MemoryRouter>,
     );
 
