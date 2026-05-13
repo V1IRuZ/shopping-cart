@@ -39,7 +39,7 @@ describe("ProductCard component", () => {
     expect(screen.getByText("-10%")).toBeInTheDocument();
     expect(screen.getByText(/20.88/i)).toBeInTheDocument();
     expect(screen.getByText(/23.2/i)).toBeInTheDocument();
-    expect(screen.getByText("4.1")).toBeInTheDocument();
+    expect(screen.getByText("(4.1)")).toBeInTheDocument();
   });
 
   it("renders a working button", async () => {
