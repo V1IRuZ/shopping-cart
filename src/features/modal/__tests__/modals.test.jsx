@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider, Outlet } from "react-router";
+import { ShopContext } from "../../../context/ShopContext.js";
 import Cart from "../../../pages/Cart.jsx";
 import userEvent from "@testing-library/user-event";
 
@@ -38,7 +39,11 @@ const mockCart = [
 ];
 
 const TestLayout = () => {
-  return <Outlet context={{ cart: mockCart, setCart: vi.fn() }} />;
+  return (
+    <ShopContext value={{cart: mockCart, dispatchCart: vi.fn()}}>
+      <Outlet />
+    </ShopContext>
+  );
 };
 
 const TestHome = () => {
@@ -252,7 +257,7 @@ describe("ConfirmationModal component", () => {
     expect(screen.getByText("Home page")).toBeInTheDocument();
   });
 
-  it('X button closes modal and redirects to the homepage', async () => {
+  it("X button closes modal and redirects to the homepage", async () => {
     const router = createMemoryRouter(mockRoutes, {
       initialEntries: ["/cart"],
     });
