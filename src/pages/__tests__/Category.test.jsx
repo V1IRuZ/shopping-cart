@@ -1,9 +1,10 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Outlet, RouterProvider, createMemoryRouter } from "react-router";
 import Category from "../Category.jsx";
 import ProductPage from "../ProductPage.jsx";
 import userEvent from "@testing-library/user-event";
+import { ShopContext } from "../../context/ShopContext.js";
 
 const mockCategory = [
   {
@@ -69,7 +70,13 @@ const mockCategory = [
 ];
 
 const TestLayout = () => {
-  return <Outlet context={{ data: mockCategory, cart: [] }} />;
+  return (
+    <ShopContext
+      value={{ data: mockCategory, handleAddToCart: vi.fn(), cart: [] }}
+    >
+      <Outlet />
+    </ShopContext>
+  );
 };
 
 const TestHome = () => {
