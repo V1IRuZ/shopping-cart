@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { useCart } from "../useCart.js";
+import { act } from "react";
 
 const mockData = {
   title: "chair",
@@ -32,7 +33,9 @@ describe("useCart", () => {
   it("should add product to the cart", async () => {
     const { result } = renderHook(() => useCart());
 
-    result.current.handleAddToCart(mockData);
+    act(() => {
+      result.current.handleAddToCart(mockData);
+    });
 
     await waitFor(() => {
       expect(result.current.cart).toEqual([
@@ -53,8 +56,13 @@ describe("useCart", () => {
   it("should add multiple products to the cart", async () => {
     const { result } = renderHook(() => useCart());
 
-    result.current.handleAddToCart(mockData);
-    result.current.handleAddToCart(mockData2);
+    act(() => {
+      result.current.handleAddToCart(mockData);
+    });
+
+    act(() => {
+      result.current.handleAddToCart(mockData2);
+    });
 
     await waitFor(() => {
       expect(result.current.cart).toEqual([
@@ -85,8 +93,13 @@ describe("useCart", () => {
   it("should increase quanitity of the product in the cart", async () => {
     const { result } = renderHook(() => useCart());
 
-    result.current.handleAddToCart(mockData);
-    result.current.handleAddToCart(mockData);
+    act(() => {
+      result.current.handleAddToCart(mockData);
+    });
+
+    act(() => {
+      result.current.handleAddToCart(mockData);
+    });
 
     await waitFor(() => {
       expect(result.current.cart).toEqual([
