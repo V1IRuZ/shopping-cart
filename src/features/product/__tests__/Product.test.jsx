@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 import Product from "../Product.jsx";
+import { ShopContext } from "../../../context/ShopContext.js";
 
 const mockProduct = {
   title: "dreamy",
@@ -76,16 +77,16 @@ describe("Product component", () => {
 
     expect(screen.getByText("Jack")).toBeInTheDocument();
     expect(screen.getByText("Very good")).toBeInTheDocument();
-    expect(screen.getByText("4")).toBeInTheDocument();
+    expect(screen.getByText("(4)")).toBeInTheDocument();
   });
 
   it("render a working button if cart does not have product", async () => {
     const user = userEvent.setup();
-    const setCart = vi.fn();
+    const dispatchCart = vi.fn();
 
     render(
       <MemoryRouter>
-        <Product product={mockProduct} cart={[]} setCart={setCart} />
+        <Product product={mockProduct} cart={[]} dispatchCart={dispatchCart} />
       </MemoryRouter>,
     );
 
@@ -93,7 +94,7 @@ describe("Product component", () => {
 
     await user.click(button);
 
-    expect(setCart).toHaveBeenCalled();
+    expect(dispatchCart).toHaveBeenCalled();
   });
 
   it("renders increment and decrement buttons if cart has product", () => {
