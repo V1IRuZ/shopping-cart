@@ -4,12 +4,17 @@ import { MemoryRouter } from "react-router";
 import { testData } from "../../../tests/test-data.js";
 import SearchInput from "../SearchInput.jsx";
 import userEvent from "@testing-library/user-event";
+import { ShopContext } from "../../../context/ShopContext.js";
+
+const data = testData;
 
 describe("SearchInput component", () => {
   it("renders search bar", () => {
     render(
       <MemoryRouter>
-        <SearchInput data={testData} />
+        <ShopContext value={{data}}>
+          <SearchInput />
+        </ShopContext>
       </MemoryRouter>,
     );
 
@@ -23,7 +28,9 @@ describe("SearchInput component", () => {
 
     render(
       <MemoryRouter>
-        <SearchInput data={testData} />
+        <ShopContext value={{data}}>
+          <SearchInput />
+        </ShopContext>
       </MemoryRouter>,
     );
 
@@ -43,8 +50,10 @@ describe("SearchInput component", () => {
 
     render(
       <MemoryRouter>
-        <SearchInput data={testData} />
-      </MemoryRouter>,
+        <ShopContext value={{data}}>
+          <SearchInput />
+        </ShopContext>
+      </MemoryRouter>
     );
 
     const input = screen.getByRole("textbox");
@@ -63,7 +72,9 @@ describe("SearchInput component", () => {
 
     render(
       <MemoryRouter>
-        <SearchInput data={testData} />
+        <ShopContext value={{data}}>
+          <SearchInput />
+        </ShopContext>
       </MemoryRouter>,
     );
 
